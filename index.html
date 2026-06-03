@@ -78,29 +78,40 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%234a7ba7" width="1200" height="400"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><rect fill="%234a7ba7" width="1200" height="500"/></svg>');
             background-size: cover;
             background-position: center;
-            padding: 120px 20px;
-            text-align: center;
+            padding: 150px 20px;
             color: #fff;
+            position: relative;
+        }
+
+        .hero-overlay {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(0,0,0,0.6);
+            border-left: 5px solid #0099cc;
+            padding: 50px 40px;
+            max-width: 600px;
         }
 
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
+            text-align: left;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
+            color: #fff;
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 16px;
             color: #e0e0e0;
+            margin-bottom: 12px;
+            line-height: 1.5;
         }
 
         main {
@@ -392,9 +403,12 @@
     </header>
 
     <div class="hero">
-        <div class="hero-content">
-            <h1>Northwest Global F.Z.E</h1>
-            <p>Establishment in 2022</p>
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Northwest</h1>
+                <p>Enterprises - Establishment in 2002</p>
+                <p>International - Establishment in 2013</p>
+            </div>
         </div>
     </div>
 
