@@ -12,197 +12,312 @@
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #fff;
         }
 
         header {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
+            background-color: #1a2f4a;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .company-branding {
-            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
         }
 
         .company-name {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
+            color: #fff;
+            margin-bottom: 2px;
         }
 
         .company-tagline {
-            font-size: 13px;
-            color: #666;
+            font-size: 11px;
+            color: #b0c4de;
             letter-spacing: 0.5px;
         }
 
         nav.main-nav {
             display: flex;
-            gap: 30px;
-            margin-top: 15px;
+            gap: 25px;
         }
 
         nav.main-nav a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
 
         nav.main-nav a:hover {
-            color: #666;
+            background-color: #0099cc;
+        }
+
+        nav.main-nav a.active {
+            background-color: #0099cc;
         }
 
         .hero {
-            background-color: #f9f9f9;
-            border-bottom: 1px solid #ddd;
-            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%234a7ba7" width="1200" height="400"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px;
+            text-align: center;
+            color: #fff;
         }
 
-        .hero-container {
+        .hero-content {
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .hero-button {
-            display: inline-block;
-            background-color: #333;
-            color: #fff;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-size: 14px;
-            border: 1px solid #333;
-            cursor: pointer;
-        }
-
-        .hero-button:hover {
-            background-color: #555;
-            border-color: #555;
+            font-size: 18px;
+            color: #e0e0e0;
         }
 
         main {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 20px;
         }
 
         .section {
-            margin-bottom: 50px;
+            padding: 80px 0;
         }
 
         .section-title {
-            font-size: 26px;
+            font-size: 36px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 15px;
+            color: #1a2f4a;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #0099cc;
+            border-radius: 2px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 0;
         }
 
         .service-card {
-            border: 1px solid #ddd;
-            padding: 25px;
-            text-align: center;
-            background-color: #f9f9f9;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .service-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 60px;
+        }
+
+        .service-card-content {
+            padding: 25px;
         }
 
         .service-card h3 {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a2f4a;
+            margin-bottom: 12px;
         }
 
         .service-card p {
             font-size: 14px;
             color: #666;
+            line-height: 1.7;
+        }
+
+        .companies-section {
+            background-color: #1a2f4a;
+            color: #fff;
+            padding: 80px 20px;
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+
+        .companies-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .companies-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .company-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .company-card-image {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        .company-card-content {
+            padding: 20px;
+        }
+
+        .company-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .company-card p {
+            font-size: 13px;
+            color: #ddd;
             line-height: 1.6;
         }
 
-        .divisions {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
+        .enterprises-section {
+            background: linear-gradient(135deg, #0099cc 0%, #0077aa 100%);
+            color: #fff;
+            padding: 80px 20px;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-top: 0;
         }
 
-        .division-box {
-            border: 1px solid #ddd;
-            padding: 25px;
-            background-color: #f9f9f9;
+        .enterprises-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .division-box h3 {
-            font-size: 20px;
+        .enterprises-title {
+            font-size: 36px;
             font-weight: bold;
-            color: #333;
             margin-bottom: 15px;
+            text-align: center;
         }
 
-        .division-box ul {
-            list-style: none;
-            margin-left: 0;
+        .enterprises-subtitle {
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 50px;
+            opacity: 0.9;
         }
 
-        .division-box li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-            font-size: 14px;
-            color: #555;
+        .products-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
-        .division-box li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #333;
+        .product-box {
+            background: rgba(255,255,255,0.15);
+            border-left: 4px solid #fff;
+            padding: 25px;
+            border-radius: 4px;
+            backdrop-filter: blur(10px);
+        }
+
+        .product-box h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-box p {
+            font-size: 13px;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .quote-icon {
+            font-size: 24px;
+            color: #fff;
+            margin-right: 5px;
         }
 
         footer {
-            background-color: #f5f5f5;
-            border-top: 1px solid #ddd;
-            padding: 30px 20px;
-            margin-top: 60px;
-            font-size: 12px;
-            color: #666;
+            background-color: #1a2f4a;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 13px;
+            border-top: 4px solid #0099cc;
         }
 
         .footer-content {
@@ -214,37 +329,47 @@
         }
 
         .footer-content a {
-            color: #333;
+            color: #0099cc;
             text-decoration: none;
-            margin-left: 20px;
         }
 
         .footer-content a:hover {
             text-decoration: underline;
         }
 
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
         @media (max-width: 768px) {
+            .services-grid,
+            .companies-grid,
+            .products-boxes {
+                grid-template-columns: 1fr;
+            }
+
             .hero h1 {
                 font-size: 32px;
             }
 
             nav.main-nav {
-                flex-direction: column;
                 gap: 10px;
             }
 
-            .services-grid,
-            .divisions {
-                grid-template-columns: 1fr;
+            nav.main-nav a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .section-title {
+                font-size: 28px;
             }
 
             .footer-content {
                 flex-direction: column;
                 gap: 15px;
-            }
-
-            .footer-content a {
-                margin-left: 0;
             }
         }
     </style>
@@ -257,7 +382,7 @@
                 <div class="company-tagline">Enterprises / International / Global F.Z.E</div>
             </div>
             <nav class="main-nav">
-                <a href="index.html">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="profile.html">Profile</a>
                 <a href="products.html">Products</a>
@@ -267,80 +392,123 @@
     </header>
 
     <div class="hero">
-        <div class="hero-container">
-            <h1>Welcome to Northwest Group</h1>
-            <p>Global supplier of raw materials to tyre, rubber & conveyor belt industries</p>
-            <a href="about.html" class="hero-button">Learn More</a>
+        <div class="hero-content">
+            <h1>Northwest Global F.Z.E</h1>
+            <p>Establishment in 2022</p>
         </div>
     </div>
 
     <main>
         <section class="section">
-            <h2 class="section-title">Services Rendered</h2>
+            <h2 class="section-title">Services Rendered by Northwest Group</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h3>Raw Materials Supply</h3>
-                    <p>Premium quality raw materials for tyre, rubber and conveyor belt industries across India and globally.</p>
+                    <div class="service-card-image">👥</div>
+                    <div class="service-card-content">
+                        <h3>Business Interest Management</h3>
+                        <p>Looking after business interest of foreign as well as Indian manufacturers of materials required by Tyre and Rubber industry.</p>
+                        <p style="margin-top: 10px;">Development of market for new products and for new sources of raw materials.</p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Global Representation</h3>
-                    <p>Representing leading manufacturers worldwide for steel cords, rubber process oils, chemicals and more.</p>
+                    <div class="service-card-image">🤝</div>
+                    <div class="service-card-content">
+                        <h3>Business Transaction Facilitation</h3>
+                        <p>Facilitating the business transactions between buyer and seller by timely securing enquiries, price negotiation and coordination with the principals and smoothening the process through our assistance in pre and post shipment documentation on a regular basis.</p>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3>Market Promotion</h3>
-                    <p>Assisting suppliers with rapid product promotion in established and emerging markets.</p>
+                    <div class="service-card-image">📊</div>
+                    <div class="service-card-content">
+                        <h3>Market Intelligence</h3>
+                        <p>Providing market intelligence in terms of opportunity, pricing and other related matters to the manufacturers.</p>
+                        <p style="margin-top: 10px;">Besides being in close touch with purchasing personnel and key actual users at plant interaction with them ensuring customer satisfaction and with these directive periodical checks are undertaken.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">Company Divisions</h2>
-            <div class="divisions">
-                <div class="division-box">
-                    <h3>Northwest Enterprises</h3>
-                    <ul>
-                        <li>Domestic raw materials supply</li>
-                        <li>Tyre manufacturing components</li>
-                        <li>Rubber processing materials</li>
-                        <li>Conveyor belt supplies</li>
-                        <li>Established market presence</li>
-                    </ul>
-                </div>
-                <div class="division-box">
-                    <h3>Northwest International</h3>
-                    <ul>
-                        <li>Global supplier network</li>
-                        <li>International sourcing</li>
-                        <li>Export capabilities</li>
-                        <li>Multinational partnerships</li>
-                        <li>Cross-border logistics</li>
-                    </ul>
+        <section class="companies-section">
+            <div class="companies-container">
+                <h2 class="companies-title">Northwest International</h2>
+                <div class="companies-grid">
+                    <div class="company-card">
+                        <div class="company-card-image">🏢</div>
+                        <div class="company-card-content">
+                            <h3>Subsidiary Company</h3>
+                            <p>A Group company of NORTHWEST ENTERPRISES established in 2013.</p>
+                        </div>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-card-image">📦</div>
+                        <div class="company-card-content">
+                            <h3>ON-Time Delivery</h3>
+                            <p>The company ensures ON Time delivery of Raw Materials to the customers, whose requirements are in emails and cannot import full container, by way of offering supplies on STOCK-AND-SALE basis from our own ware house in Mumbai.</p>
+                        </div>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-card-image">📋</div>
+                        <div class="company-card-content">
+                            <h3>Stock & Sales - Materials</h3>
+                            <p>Tackifying Resin from Sinolegend, Rubber Chemicals from Sennics (Sinochem), Hydrocarbon Resins, Aramid Pulp from Sinochem, and more specialized materials available.</p>
+                        </div>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-card-image">🔧</div>
+                        <div class="company-card-content">
+                            <h3>Raw Material Supply</h3>
+                            <p>Any other Raw Material required for the manufacturing of tyres and rubber products as per customer's need.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">Products Represented</h2>
-            <div class="division-box">
-                <ul>
-                    <li>Steel Cords - Premium quality reinforcement</li>
-                    <li>Rubber Process Oils - GTL and conventional grades</li>
-                    <li>Rubber Chemicals - Accelerators, activators, and antioxidants</li>
-                    <li>Reinforcement Fibres - High strength materials</li>
-                    <li>Speciality Chemicals - Industry-specific compounds</li>
-                    <li>Additional materials for tyre and rubber manufacturing</li>
-                </ul>
+        <section class="enterprises-section">
+            <div class="enterprises-container">
+                <h2 class="enterprises-title">Northwest Enterprises</h2>
+                <p class="enterprises-subtitle">Companies using represented and their Products</p>
+                <div class="products-boxes">
+                    <div class="product-box">
+                        <h4><span class="quote-icon">❝</span>Principal Companies 1</h4>
+                        <p>1. Jiangsu Xingda Steel Tyre Cord Co. Ltd, China<br>
+                        2. Zhejiang Unifull Hi-Tech Industry Co. Ltd, China<br>
+                        3. Bestory Industries Co. Ltd., China<br>
+                        4. Flow Polymers, LLC - USA<br>
+                        5. Senliang, China<br>
+                        6. Sino Legend Chemical Company Ltd., China<br>
+                        7. Twinkle Star Chem Technology Limited, China<br>
+                        8. DTCC Hydrocarbon Resins (Japan)<br>
+                        9. Sinochem High Performance Fibres<br>
+                        10. Nanjing Shuguang Silane Chemical Co., Ltd., China</p>
+                    </div>
+                    <div class="product-box">
+                        <h4><span class="quote-icon">❝</span>Principal Companies 2</h4>
+                        <p>11. Weihai Runtong/Jintai - Tyre Bladders<br>
+                        12. Shell Singapore/Hong Kong - Rubber Oils<br>
+                        13. Fin International Thailand - Curing release agents<br>
+                        14. APS Global - Cobalt Adhesion promoter<br>
+                        15. Yuebing International - Conveyor Belt Fabric, Synthetic Rubber</p>
+                    </div>
+                    <div class="product-box">
+                        <h4><span class="quote-icon">❝</span>Industries Served</h4>
+                        <p>• Tyre & Rubber Industry<br>
+                        • Conveyor Belt Industry<br>
+                        • Hose Industry<br>
+                        • Brake Lining<br>
+                        • Automotive Components<br>
+                        • Construction Chemicals<br>
+                        • And more specialized sectors</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div>Copyright &copy; 2026 | Powered by Northwest Group</div>
-            <a href="#top">Back to Top</a>
+            <div>Copyright © 2013 | Powered by Northwest Group</div>
+            <a href="#top" class="back-to-top">↑ Back to Top</a>
         </div>
     </footer>
 </body>
