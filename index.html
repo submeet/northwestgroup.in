@@ -101,6 +101,12 @@
             text-align: left;
         }
 
+        .hero-entity {
+            margin-bottom: 40px;
+            animation: slideInLeft 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
         .hero h1 {
             font-size: 56px;
             font-weight: bold;
@@ -111,8 +117,16 @@
         .hero p {
             font-size: 16px;
             color: #e0e0e0;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             line-height: 1.5;
+        }
+
+        .hero-entity h1 {
+            margin-bottom: 10px;
+        }
+
+        .hero-entity p {
+            margin-bottom: 0;
         }
 
         main {
@@ -535,10 +549,18 @@
     <div class="hero">
         <div class="hero-overlay">
             <div class="hero-content">
-                <h1>Northwest</h1>
-                <p>Enterprises - Establishment in 2002</p>
-                <p>International - Establishment in 2013</p>
-                <p>Global F.Z.E - Establishment in 2022</p>
+                <div class="hero-entity">
+                    <h1>Northwest</h1>
+                    <p>Enterprises - Establishment in 2002</p>
+                </div>
+                <div class="hero-entity" style="animation-delay: 0.5s;">
+                    <h1>Northwest</h1>
+                    <p>International - Establishment in 2013</p>
+                </div>
+                <div class="hero-entity" style="animation-delay: 1s;">
+                    <h1>Northwest</h1>
+                    <p>Global F.Z.E - Establishment in 2022</p>
+                </div>
             </div>
         </div>
     </div>
