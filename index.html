@@ -79,7 +79,7 @@
 
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><rect fill="%234a7ba7" width="1200" height="500"/></svg>');
+                        url('images/skyline.jpg');
             background-size: cover;
             background-position: center;
             padding: 150px 20px;
@@ -94,6 +94,7 @@
             border-left: 5px solid #0099cc;
             padding: 50px 40px;
             max-width: 600px;
+            animation: slideInLeft 0.8s ease-out;
         }
 
         .hero-content {
@@ -430,6 +431,28 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
 
