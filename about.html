@@ -12,72 +12,99 @@
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fff;
+            background-color: #f5f5f5;
         }
 
         header {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
+            background-color: #1a2f4a;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .company-branding {
-            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
         }
 
         .company-name {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
+            color: #fff;
+            margin-bottom: 2px;
         }
 
         .company-tagline {
-            font-size: 13px;
-            color: #666;
+            font-size: 11px;
+            color: #b0c4de;
             letter-spacing: 0.5px;
         }
 
         nav.main-nav {
             display: flex;
-            gap: 30px;
-            margin-top: 15px;
+            gap: 25px;
         }
 
         nav.main-nav a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
 
         nav.main-nav a:hover {
-            color: #666;
+            background-color: #0099cc;
         }
 
-        main {
+        nav.main-nav a.active {
+            background-color: #0099cc;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%234a7ba7" width="1200" height="300"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .breadcrumb {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 30px;
+            font-size: 14px;
+            color: #e0e0e0;
         }
 
         .breadcrumb a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -85,37 +112,46 @@
             text-decoration: underline;
         }
 
-        .page-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            color: #333;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        .company-header {
-            font-size: 22px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 8px;
+        .about-header {
+            background-color: #e8e8e8;
+            border: 2px solid #999;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        .company-period {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 25px;
+        .about-header h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: underline;
+            margin-bottom: 5px;
+        }
+
+        .about-content {
+            background-color: #fff;
+            border-left: 5px solid #0099cc;
+            padding: 40px;
+            border-radius: 4px;
         }
 
         .about-content ul {
             list-style: none;
             margin-left: 0;
-            margin-bottom: 40px;
         }
 
         .about-content li {
-            margin-bottom: 12px;
-            padding-left: 20px;
+            margin-bottom: 18px;
+            padding-left: 0;
             position: relative;
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.8;
             color: #555;
         }
@@ -123,16 +159,19 @@
         .about-content li:before {
             content: "•";
             position: absolute;
-            left: 0;
-            color: #333;
+            left: -20px;
+            color: #0099cc;
+            font-weight: bold;
+            font-size: 20px;
         }
 
         footer {
             background-color: #f5f5f5;
-            border-top: 1px solid #ddd;
-            padding: 30px 20px;
+            border-top: 4px solid #0099cc;
+            padding: 40px 20px;
             margin-top: 60px;
-            font-size: 12px;
+            text-align: center;
+            font-size: 13px;
             color: #666;
         }
 
@@ -145,36 +184,69 @@
         }
 
         .footer-content a {
-            color: #333;
+            color: #0099cc;
             text-decoration: none;
-            margin-left: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .footer-content a:hover {
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 22px;
-            }
+        .back-to-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #0099cc;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
 
-            .company-header {
-                font-size: 18px;
+        .back-to-top-btn:hover {
+            background-color: #0077aa;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
             }
 
             nav.main-nav {
-                flex-direction: column;
                 gap: 10px;
+            }
+
+            nav.main-nav a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .about-header h2 {
+                font-size: 24px;
+            }
+
+            .about-content {
+                padding: 25px;
+            }
+
+            .about-content li {
+                font-size: 14px;
             }
 
             .footer-content {
                 flex-direction: column;
                 gap: 15px;
-            }
-
-            .footer-content a {
-                margin-left: 0;
             }
         }
     </style>
@@ -188,7 +260,7 @@
             </div>
             <nav class="main-nav">
                 <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
+                <a href="about.html" class="active">About Us</a>
                 <a href="profile.html">Profile</a>
                 <a href="products.html">Products</a>
                 <a href="contact.html">Contact Us</a>
@@ -196,22 +268,27 @@
         </div>
     </header>
 
-    <main>
-        <div class="breadcrumb">
-            <a href="index.html">Home</a> > About Us
+    <div class="hero">
+        <div class="hero-content">
+            <h1>About us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> :: <span>About us</span>
+            </div>
         </div>
+    </div>
 
-        <h1 class="page-title">About us</h1>
-
-        <div class="company-header">Northwest Group</div>
-        <div class="company-period">(2002-2025)</div>
+    <main>
+        <div class="about-header">
+            <h2>Northwest Group</h2>
+            <p style="font-size: 18px; color: #333;">(2002-2025)</p>
+        </div>
 
         <div class="about-content">
             <ul>
                 <li>Commenced its operations in the year 2002.</li>
                 <li>Primarily engaged in supply of Raw Materials to Tyre, Rubber & Conveyor belt industry in India as well as abroad.</li>
                 <li>Assisting suppliers in rapid product promotion in well established as well as nascent markets.</li>
-                <li>Consistent turnover growth since the company's inception in 2002. (From USD 1 million in 2002 to 115 million by the end 2022).</li>
+                <li>Consistent turnover growth since the company's inception in 2002. (From USD 1 million in 2002 to 115 million by the end 2025).</li>
                 <li>Representing some of top manufacturers across the globe for Steel Cords, Rubber Process oils/GTL, Rubber Chemicals, Reinforcement Fibres, Speciality chemicals etc.</li>
             </ul>
         </div>
@@ -219,9 +296,23 @@
 
     <footer>
         <div class="footer-content">
-            <div>Copyright &copy; 2026 | Powered by Northwest Group</div>
-            <a href="#top">Back to Top</a>
+            <div>Copyright © 2013 | Powered by Northwest Group</div>
+            <a href="#top">↑ Back to Top</a>
         </div>
     </footer>
+
+    <a href="#top" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</a>
+
+    <script>
+        // Show/hide back-to-top button
+        const backToTopBtn = document.querySelector('.back-to-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
