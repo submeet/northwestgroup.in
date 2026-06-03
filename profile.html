@@ -12,72 +12,99 @@
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fff;
+            background-color: #f5f5f5;
         }
 
         header {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
+            background-color: #1a2f4a;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .company-branding {
-            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
         }
 
         .company-name {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
+            color: #fff;
+            margin-bottom: 2px;
         }
 
         .company-tagline {
-            font-size: 13px;
-            color: #666;
+            font-size: 11px;
+            color: #b0c4de;
             letter-spacing: 0.5px;
         }
 
         nav.main-nav {
             display: flex;
-            gap: 30px;
-            margin-top: 15px;
+            gap: 25px;
         }
 
         nav.main-nav a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
 
         nav.main-nav a:hover {
-            color: #666;
+            background-color: #0099cc;
         }
 
-        main {
+        nav.main-nav a.active {
+            background-color: #0099cc;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%234a7ba7" width="1200" height="300"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .breadcrumb {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 30px;
+            font-size: 14px;
+            color: #e0e0e0;
         }
 
         .breadcrumb a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -85,106 +112,114 @@
             text-decoration: underline;
         }
 
-        .page-title {
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-header {
+            background-color: #fff;
+            border: 3px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
             font-size: 28px;
             font-weight: bold;
-            margin-bottom: 30px;
             color: #333;
-            border-bottom: 2px solid #333;
-            padding-bottom: 15px;
         }
 
-        .profile-section {
+        .team-member {
+            background-color: #fff;
+            border-left: 5px solid #0099cc;
+            padding: 35px;
             margin-bottom: 35px;
+            border-radius: 4px;
         }
 
-        .profile-section h2 {
-            font-size: 22px;
-            font-weight: bold;
-            color: #333;
+        .member-header {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .member-photo {
+            flex-shrink: 0;
+            width: 220px;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info {
+            flex: 1;
+        }
+
+        .member-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a2f4a;
+            text-decoration: underline;
             margin-bottom: 15px;
-            margin-top: 20px;
         }
 
-        .profile-section p {
-            font-size: 15px;
+        .member-description {
+            font-size: 14px;
             color: #555;
             line-height: 1.8;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
-        .profile-section ul {
+        .member-points {
             list-style: none;
             margin-left: 0;
         }
 
-        .profile-section li {
-            margin-bottom: 10px;
+        .member-points li {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 8px;
             padding-left: 20px;
             position: relative;
-            font-size: 15px;
-            color: #555;
         }
 
-        .profile-section li:before {
+        .member-points li:before {
             content: "•";
             position: absolute;
             left: 0;
-            color: #333;
-        }
-
-        .profile-box {
-            background-color: #f9f9f9;
-            padding: 25px;
-            border: 1px solid #ddd;
-            margin-bottom: 25px;
-        }
-
-        .profile-box h3 {
-            font-size: 18px;
+            color: #0099cc;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 12px;
         }
 
-        .profile-box p {
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 35px;
-        }
-
-        .stat-box {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .stat-number {
+        .quote-icon {
             font-size: 32px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: #666;
+            color: #ddd;
+            margin-bottom: 10px;
         }
 
         footer {
             background-color: #f5f5f5;
-            border-top: 1px solid #ddd;
-            padding: 30px 20px;
+            border-top: 4px solid #0099cc;
+            padding: 40px 20px;
             margin-top: 60px;
-            font-size: 12px;
+            text-align: center;
+            font-size: 13px;
             color: #666;
         }
 
@@ -197,36 +232,75 @@
         }
 
         .footer-content a {
-            color: #333;
+            color: #0099cc;
             text-decoration: none;
-            margin-left: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .footer-content a:hover {
             text-decoration: underline;
         }
 
+        .back-to-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #0099cc;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .back-to-top-btn:hover {
+            background-color: #0077aa;
+        }
+
         @media (max-width: 768px) {
-            .page-title {
-                font-size: 22px;
+            .hero h1 {
+                font-size: 28px;
             }
 
             nav.main-nav {
-                flex-direction: column;
                 gap: 10px;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
+            nav.main-nav a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .section-header h2 {
+                font-size: 22px;
+            }
+
+            .member-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .member-photo {
+                width: 100%;
+                height: 250px;
+            }
+
+            .team-member {
+                padding: 20px;
             }
 
             .footer-content {
                 flex-direction: column;
                 gap: 15px;
-            }
-
-            .footer-content a {
-                margin-left: 0;
             }
         }
     </style>
@@ -241,108 +315,121 @@
             <nav class="main-nav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
-                <a href="profile.html">Profile</a>
+                <a href="profile.html" class="active">Profile</a>
                 <a href="products.html">Products</a>
                 <a href="contact.html">Contact Us</a>
             </nav>
         </div>
     </header>
 
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Profile</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> :: <span>Profile</span>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <div class="breadcrumb">
-            <a href="index.html">Home</a> > Profile
+        <div class="section-header">
+            <h2>Northwest Group - Core Member</h2>
         </div>
 
-        <h1 class="page-title">Company Profile</h1>
-
-        <div class="stats-grid">
-            <div class="stat-box">
-                <div class="stat-number">23+</div>
-                <div class="stat-label">Years of Experience</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">$115M</div>
-                <div class="stat-label">Turnover (2022)</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Global Partners</div>
+        <!-- Mr. S K Jain -->
+        <div class="team-member">
+            <div class="member-header">
+                <div class="member-photo">👔</div>
+                <div class="member-info">
+                    <div class="member-name">Mr. S.K Jain (Promoter)</div>
+                    <div class="member-description">
+                        A Chemical Engineer with more than 50 years of experience in Tyre/Rubber raw material purchase & Marketing. Earlier worked with Modi-Continental & Apollo Tyres. From 2002 onwards working as a facilitator to the Tyre & Rubber Industry via Northwest.
+                    </div>
+                    <ul class="member-points">
+                        <li>1972-1975: Worked in the project & purchase department of Modi-Continental Tyres India.</li>
+                        <li>1975-1977: Worked in Apollo Tyres in project & purchase department.</li>
+                        <li>1978-2002: Worked in purchase department of Modi-Continental. Resigned in 2002 as head of purchase department following company closure.</li>
+                        <li>2002 Onwards: Working as a facilitator to the Tyre & Rubber Industry via Northwest.</li>
+                        <li>Mr. S.K Jain has more than 50 years of experience in Tyre/Rubber raw material purchase & Marketing</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <section class="profile-section">
-            <h2>About Northwest Group</h2>
-            <p>Northwest Group is a leading supplier of raw materials to the tyre, rubber, and conveyor belt industries. Since our inception in 2002, we have grown from a startup with USD 1 million turnover to a company with USD 115 million in annual revenue by 2022.</p>
-            <p>Our success is built on strong relationships with manufacturers globally and a commitment to quality and reliability in every transaction.</p>
-        </section>
-
-        <section class="profile-section">
-            <h2>Our Mission</h2>
-            <div class="profile-box">
-                <p>To be a trusted partner in the supply of raw materials and specialized chemicals for the rubber and tyre industries, delivering consistent quality, competitive pricing, and exceptional service to customers across India and globally.</p>
+        <!-- Mr. Swaranjit Singh -->
+        <div class="team-member">
+            <div class="member-info">
+                <div class="quote-icon">❝</div>
+                <div class="member-name">Mr. Swaranjit Singh (Advisor)</div>
+                <div class="member-description">
+                    Background in Mechanical engineering and Mgt, worked in various industries like consumer electronic, Pharma, computer hardware and finally with JK Tyres for 20 plus years covering production, planning and purchases and finally retiring from the position of Materials Director.
+                </div>
             </div>
-        </section>
+        </div>
 
-        <section class="profile-section">
-            <h2>Our Vision</h2>
-            <div class="profile-box">
-                <p>To be the most trusted and preferred partner, bridging the gap between global manufacturers and customers by providing seamless, innovative, and reliable solutions that drive mutual success.</p>
+        <!-- Mr. Y.Verma -->
+        <div class="team-member">
+            <div class="member-info">
+                <div class="quote-icon">❝</div>
+                <div class="member-name">Mr. Y.Verma (Commercial Head)</div>
+                <div class="member-description">
+                    Had a long stint in Tyre Industry spanning over 30 years and worked in Apollo Tyres and JK tyres in various capacities in the engineering purchase section and for a pretty long time in raw material purchases handling as well as coordinating the procurement of all the raw materials, indigenous as well as imported required for automotive Tyre & Tubes Production.
+                </div>
             </div>
-        </section>
+        </div>
 
-        <section class="profile-section">
-            <h2>Key Strengths</h2>
-            <ul>
-                <li><strong>Experience:</strong> Over two decades of industry expertise</li>
-                <li><strong>Global Network:</strong> Representation of top manufacturers worldwide</li>
-                <li><strong>Product Range:</strong> Comprehensive portfolio of raw materials and specialty chemicals</li>
-                <li><strong>Market Coverage:</strong> Strong presence in both established and emerging markets</li>
-                <li><strong>Reliability:</strong> Consistent growth and customer satisfaction</li>
-                <li><strong>Quality Assurance:</strong> Strict quality control and compliance standards</li>
-            </ul>
-        </section>
-
-        <section class="profile-section">
-            <h2>Primary Products & Services</h2>
-            <ul>
-                <li>Steel Cords for tyre reinforcement</li>
-                <li>Rubber Process Oils (GTL and conventional)</li>
-                <li>Rubber Chemicals (accelerators, activators, antioxidants)</li>
-                <li>Reinforcement Fibres</li>
-                <li>Specialty Chemicals for tyre and rubber manufacturing</li>
-                <li>Market promotion and supplier representation</li>
-            </ul>
-        </section>
-
-        <section class="profile-section">
-            <h2>Market Presence</h2>
-            <div class="profile-box">
-                <h3>Domestic Market (India)</h3>
-                <p>Strong presence serving leading tyre manufacturers, rubber processors, and conveyor belt producers across India through our Northwest Enterprises division.</p>
+        <!-- Mr. N.R Mohan -->
+        <div class="team-member">
+            <div class="member-info">
+                <div class="quote-icon">❝</div>
+                <div class="member-name">Mr. N.R Mohan (Technical Service Manager)</div>
+                <div class="member-description">
+                    A Textile Engineering graduate by virtue of handling production, technical and sales of Nylon Tyre Cord and Belting fabric has been in close contact with Tyre industry for over 30 years and has now been looking after Northwest's business interests in Mumbai.
+                </div>
             </div>
-            <div class="profile-box">
-                <h3>International Market</h3>
-                <p>Global representation and supply capabilities through our Northwest International division, serving manufacturers and distributors across multiple countries.</p>
-            </div>
-        </section>
+        </div>
 
-        <section class="profile-section">
-            <h2>Business Growth</h2>
-            <ul>
-                <li>2002: Company inception with USD 1 million turnover</li>
-                <li>2010-2015: Expansion into international markets</li>
-                <li>2015-2020: Portfolio expansion and additional supplier representations</li>
-                <li>2020-2022: Achieved USD 115 million turnover milestone</li>
-                <li>2023-Present: Continued expansion and market diversification</li>
-            </ul>
-        </section>
+        <!-- Mr. Utsav Jain -->
+        <div class="team-member">
+            <div class="member-info">
+                <div class="quote-icon">❝</div>
+                <div class="member-name">Mr. Utsav Jain (Partner)</div>
+                <div class="member-description">
+                    A background in Business Economics and Finance and having worked with Northwest Group for 15 years, has gained experience in handling Business development, Finance, Marketing and Management of Northwest's group activities.
+                </div>
+            </div>
+        </div>
+
+        <!-- Sunil Sharma -->
+        <div class="team-member">
+            <div class="member-info">
+                <div class="quote-icon">❝</div>
+                <div class="member-name">Sunil Sharma (Head Business Development)</div>
+                <div class="member-description">
+                    Management Graduate and a procurement professional with more than 15 years of extensive experience in procurement and supply chain management. Worked across diverse industries for sourcing of raw materials, including tire manufacturing, construction chemicals, and electric vehicle batteries with companies like BKT, CEAT, Mahansaria Tires, Walplast & Epsilon Group.
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div>Copyright &copy; 2026 | Powered by Northwest Group</div>
-            <a href="#top">Back to Top</a>
+            <div>Copyright © 2013 | Powered by Northwest Group</div>
+            <a href="#top">↑ Back to Top</a>
         </div>
     </footer>
+
+    <a href="#top" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</a>
+
+    <script>
+        const backToTopBtn = document.querySelector('.back-to-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
