@@ -551,6 +551,120 @@
             }
         }
 
+        .image-slider {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+
+        .slider-nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .slider-prev {
+            left: 20px;
+        }
+
+        .slider-next {
+            right: 20px;
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: none;
+        }
+
+        .slider-dot.active {
+            background-color: #0099cc;
+        }
+
+        .slider-dot:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .slider-container {
+                height: 250px;
+            }
+
+            .slider-nav-button {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .slider-prev {
+                left: 10px;
+            }
+
+            .slider-next {
+                right: 10px;
+            }
+        }
+
         @keyframes slideInUp {
             from {
                 opacity: 0;
@@ -626,6 +740,21 @@
             </nav>
         </div>
     </header>
+
+    <div class="image-slider">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider-slide">
+                    <img src="images/skyline.jpg" alt="Skyline">
+                </div>
+            </div>
+            <button class="slider-nav-button slider-prev" onclick="sliderPrev()">❮</button>
+            <button class="slider-nav-button slider-next" onclick="sliderNext()">❯</button>
+            <div class="slider-dots">
+                <button class="slider-dot active" onclick="sliderGoTo(0)"></button>
+            </div>
+        </div>
+    </div>
 
     <div class="hero">
         <div class="hero-overlay">
@@ -779,5 +908,39 @@
             <a href="#top" class="back-to-top">↑ Back to Top</a>
         </div>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+        const slides = document.querySelectorAll('.slider-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function updateSlider() {
+            const offset = -currentSlide * 100;
+            sliderWrapper.style.transform = `translateX(${offset}%)`;
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function sliderNext() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }
+
+        function sliderPrev() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function sliderGoTo(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Auto-advance slider every 5 seconds
+        setInterval(sliderNext, 5000);
+    </script>
 </body>
 </html>
