@@ -12,56 +12,71 @@
         }
 
         body {
-            font-family: Georgia, 'Times New Roman', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fff;
+            background-color: #f5f5f5;
         }
 
         header {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
+            background-color: #1a2f4a;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .company-branding {
-            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
         }
 
         .company-name {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
+            color: #fff;
+            margin-bottom: 2px;
         }
 
         .company-tagline {
-            font-size: 13px;
-            color: #666;
+            font-size: 11px;
+            color: #b0c4de;
             letter-spacing: 0.5px;
         }
 
         nav.main-nav {
             display: flex;
-            gap: 30px;
-            margin-top: 15px;
+            gap: 25px;
+            margin-top: 0;
         }
 
         nav.main-nav a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
 
         nav.main-nav a:hover {
-            color: #666;
+            background-color: #0099cc;
+        }
+
+        nav.main-nav a.active {
+            background-color: #0099cc;
         }
 
         main {
@@ -78,6 +93,41 @@
 
         .breadcrumb a {
             color: #333;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%234a7ba7" width="1200" height="300"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb {
+            font-size: 14px;
+            color: #e0e0e0;
+        }
+
+        .breadcrumb a {
+            color: #fff;
             text-decoration: none;
         }
 
@@ -298,12 +348,16 @@
         </div>
     </header>
 
-    <main>
-        <div class="breadcrumb">
-            <a href="index.html">Home</a> > Contact Us
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> :: <span>Contact Us</span>
+            </div>
         </div>
+    </div>
 
-        <h1 class="page-title">Contact Us</h1>
+    <main>
 
         <div class="contact-container">
             <div class="contact-info">
