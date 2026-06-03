@@ -687,33 +687,244 @@
         }
 
         @media (max-width: 768px) {
-            .services-grid,
-            .companies-grid,
-            .products-boxes {
-                grid-template-columns: 1fr;
+            body {
+                font-size: 14px;
             }
 
-            .team-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            header {
+                padding: 12px 0;
             }
 
-            .team-info h2 {
-                font-size: 24px;
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
             }
 
-            .hero h1 {
-                font-size: 32px;
+            .company-name {
+                font-size: 18px;
+            }
+
+            .company-tagline {
+                font-size: 10px;
             }
 
             nav.main-nav {
-                gap: 10px;
+                flex-wrap: wrap;
+                gap: 8px;
+                justify-content: center;
             }
 
             nav.main-nav a {
                 font-size: 12px;
                 padding: 6px 10px;
+                border-radius: 3px;
             }
+
+            .hero {
+                padding: 80px 15px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .hero-overlay {
+                padding: 30px 20px;
+                max-width: 90%;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .hero p {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            .hero-entity h1 {
+                margin-bottom: 8px;
+            }
+
+            main {
+                padding: 0 15px;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .services-grid,
+            .companies-grid,
+            .products-boxes {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-card,
+            .company-card {
+                margin-bottom: 15px;
+            }
+
+            .service-card h3,
+            .company-card h3 {
+                font-size: 14px;
+            }
+
+            .service-card p,
+            .company-card p {
+                font-size: 13px;
+            }
+
+            .team-section {
+                padding: 50px 15px;
+            }
+
+            .team-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .team-image-wrapper {
+                width: 100%;
+            }
+
+            .team-info h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .team-info p {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .team-highlights li {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .enterprises-section {
+                padding: 50px 15px;
+            }
+
+            .enterprises-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .enterprises-subtitle {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .product-box {
+                padding: 20px;
+            }
+
+            .product-box h4 {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .product-box p {
+                font-size: 12px;
+            }
+
+            .companies-section {
+                padding: 50px 15px;
+            }
+
+            .companies-title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            footer {
+                padding: 30px 15px;
+                font-size: 12px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .footer-content a {
+                margin-left: 0;
+            }
+
+            .back-to-top-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+                bottom: 20px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                gap: 10px;
+            }
+
+            .company-name {
+                font-size: 16px;
+            }
+
+            nav.main-nav a {
+                font-size: 11px;
+                padding: 5px 8px;
+            }
+
+            .hero {
+                padding: 60px 10px;
+            }
+
+            .hero-overlay {
+                padding: 20px 15px;
+            }
+
+            .hero h1 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            .hero p {
+                font-size: 12px;
+            }
+
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+
+            .service-card-image,
+            .company-card-image {
+                height: 120px;
+            }
+
+            .team-info h2 {
+                font-size: 18px;
+            }
+
+            .enterprises-title {
+                font-size: 20px;
+            }
+
+            .back-to-top-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                bottom: 15px;
+                right: 10px;
+            }
+        }
 
             .section-title {
                 font-size: 28px;
