@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Northwest Group</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .company-branding {
+            margin-bottom: 15px;
+        }
+
+        .company-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .company-tagline {
+            font-size: 13px;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        nav.main-nav {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        nav.main-nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav.main-nav a:hover {
+            color: #666;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .breadcrumb a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .company-header {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .company-period {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .about-content ul {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 40px;
+        }
+
+        .about-content li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-content li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 22px;
+            }
+
+            .company-header {
+                font-size: 18px;
+            }
+
+            nav.main-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-content a {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="company-branding">
+                <div class="company-name">Northwest Group</div>
+                <div class="company-tagline">Enterprises / International / Global F.Z.E</div>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> > About Us
+        </div>
+
+        <h1 class="page-title">About us</h1>
+
+        <div class="company-header">Northwest Group</div>
+        <div class="company-period">(2002-2025)</div>
+
+        <div class="about-content">
+            <ul>
+                <li>Commenced its operations in the year 2002.</li>
+                <li>Primarily engaged in supply of Raw Materials to Tyre, Rubber & Conveyor belt industry in India as well as abroad.</li>
+                <li>Assisting suppliers in rapid product promotion in well established as well as nascent markets.</li>
+                <li>Consistent turnover growth since the company's inception in 2002. (From USD 1 million in 2002 to 115 million by the end 2022).</li>
+                <li>Representing some of top manufacturers across the globe for Steel Cords, Rubber Process oils/GTL, Rubber Chemicals, Reinforcement Fibres, Speciality chemicals etc.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>Copyright &copy; 2026 | Powered by Northwest Group</div>
+            <a href="#top">Back to Top</a>
+        </div>
+    </footer>
+</body>
+</html>

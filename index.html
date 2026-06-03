@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Northwest Group</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .company-branding {
+            margin-bottom: 15px;
+        }
+
+        .company-name {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .company-tagline {
+            font-size: 13px;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        nav.main-nav {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        nav.main-nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav.main-nav a:hover {
+            color: #666;
+        }
+
+        .hero {
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+            padding: 60px 20px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid #333;
+            cursor: pointer;
+        }
+
+        .hero-button:hover {
+            background-color: #555;
+            border-color: #555;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 25px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .divisions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .division-box {
+            border: 1px solid #ddd;
+            padding: 25px;
+            background-color: #f9f9f9;
+        }
+
+        .division-box h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .division-box ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .division-box li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .division-box li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-content a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            nav.main-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .services-grid,
+            .divisions {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-content a {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="company-branding">
+                <div class="company-name">Northwest Group</div>
+                <div class="company-tagline">Enterprises / International / Global F.Z.E</div>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-container">
+            <h1>Welcome to Northwest Group</h1>
+            <p>Global supplier of raw materials to tyre, rubber & conveyor belt industries</p>
+            <a href="about.html" class="hero-button">Learn More</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="section">
+            <h2 class="section-title">Services Rendered</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Raw Materials Supply</h3>
+                    <p>Premium quality raw materials for tyre, rubber and conveyor belt industries across India and globally.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Global Representation</h3>
+                    <p>Representing leading manufacturers worldwide for steel cords, rubber process oils, chemicals and more.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Market Promotion</h3>
+                    <p>Assisting suppliers with rapid product promotion in established and emerging markets.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Company Divisions</h2>
+            <div class="divisions">
+                <div class="division-box">
+                    <h3>Northwest Enterprises</h3>
+                    <ul>
+                        <li>Domestic raw materials supply</li>
+                        <li>Tyre manufacturing components</li>
+                        <li>Rubber processing materials</li>
+                        <li>Conveyor belt supplies</li>
+                        <li>Established market presence</li>
+                    </ul>
+                </div>
+                <div class="division-box">
+                    <h3>Northwest International</h3>
+                    <ul>
+                        <li>Global supplier network</li>
+                        <li>International sourcing</li>
+                        <li>Export capabilities</li>
+                        <li>Multinational partnerships</li>
+                        <li>Cross-border logistics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Products Represented</h2>
+            <div class="division-box">
+                <ul>
+                    <li>Steel Cords - Premium quality reinforcement</li>
+                    <li>Rubber Process Oils - GTL and conventional grades</li>
+                    <li>Rubber Chemicals - Accelerators, activators, and antioxidants</li>
+                    <li>Reinforcement Fibres - High strength materials</li>
+                    <li>Speciality Chemicals - Industry-specific compounds</li>
+                    <li>Additional materials for tyre and rubber manufacturing</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>Copyright &copy; 2026 | Powered by Northwest Group</div>
+            <a href="#top">Back to Top</a>
+        </div>
+    </footer>
+</body>
+</html>
