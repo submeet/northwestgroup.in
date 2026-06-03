@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "vercel": {
+      "command": "vercel",
+      "args": [
+        "whoami"
+      ],
+      "env": {
+        "VERCEL_TOKEN": "${VERCEL_TOKEN}"
+      },
+      "autoStart": true,
+      "alwaysAllow": [
+        "vercel"
+      ]
+    }
+  }
+}

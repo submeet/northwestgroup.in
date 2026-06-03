@@ -1,0 +1,15 @@
+{
+  "mcp": {
+    "enabled": true,
+    "vercel": {
+      "enabled": true,
+      "scope": "submeet-ahis-projects",
+      "autoStart": true
+    }
+  },
+  "environment": {
+    "VERCEL_TOKEN": "${VERCEL_TOKEN}",
+    "VERCEL_ORG_ID": "team_3UbEYoujWUASLtjVqKvBJCeS",
+    "VERCEL_PROJECT_ID": "prj_tIYeV4a89lPprJkVQMIQKa0DlQpi"
+  }
+}
