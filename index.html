@@ -259,6 +259,74 @@
             line-height: 1.6;
         }
 
+        .team-section {
+            background-color: #fff;
+            padding: 80px 20px;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .team-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .team-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .team-info h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a2f4a;
+            margin-bottom: 20px;
+        }
+
+        .team-info p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .team-highlights {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .team-highlights li {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .team-highlights li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0099cc;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
         .enterprises-section {
             background: linear-gradient(135deg, #0099cc 0%, #0077aa 100%);
             color: #fff;
@@ -391,6 +459,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .team-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .team-info h2 {
+                font-size: 24px;
+            }
+
             .hero h1 {
                 font-size: 32px;
             }
@@ -503,6 +580,26 @@
                             <h3>Raw Material Supply</h3>
                             <p>Any other Raw Material required for the manufacturing of tyres and rubber products as per customer's need.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="team-container">
+                <div class="team-content">
+                    <div class="team-image-wrapper">
+                        <img src="PATH_TO_IMAGE" alt="Team Partnership" class="team-image">
+                    </div>
+                    <div class="team-info">
+                        <h2>Team Unity & Partnership</h2>
+                        <p>At Northwest Group, we believe in the power of collaboration. Our experienced team works together to deliver exceptional service and build strong, lasting partnerships with our suppliers and customers across the globe.</p>
+                        <ul class="team-highlights">
+                            <li>50+ years combined industry experience</li>
+                            <li>Dedicated support across all markets</li>
+                            <li>Global partnership network</li>
+                            <li>Commitment to excellence</li>
+                        </ul>
                     </div>
                 </div>
             </div>
