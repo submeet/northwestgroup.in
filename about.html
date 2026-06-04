@@ -38,6 +38,27 @@
             align-items: center;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         .company-branding {
             display: flex;
             flex-direction: column;
@@ -311,6 +332,17 @@
         }
 
         @media (max-width: 480px) {
+            .header-left {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-logo {
+                width: 40px;
+                height: 40px;
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
             header {
                 padding: 10px 0;
             }
@@ -319,6 +351,18 @@
                 flex-direction: column;
                 gap: 10px;
                 padding: 0 15px;
+            }
+
+            .header-left {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-logo {
+                width: 40px;
+                height: 40px;
+                margin-right: 0;
+                margin-bottom: 5px;
             }
 
             .company-branding {
@@ -438,9 +482,14 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="company-branding">
-                <div class="company-name">Northwest Group</div>
-                <div class="company-tagline">Enterprises / International / Global F.Z.E</div>
+            <div class="header-left">
+                <div class="header-logo">
+                    <img src="images/logo.png" alt="Northwest Group Logo">
+                </div>
+                <div class="company-branding">
+                    <div class="company-name">Northwest Group</div>
+                    <div class="company-tagline">Enterprises / International / Global F.Z.E</div>
+                </div>
             </div>
             <nav class="main-nav">
                 <a href="index.html">Home</a>
