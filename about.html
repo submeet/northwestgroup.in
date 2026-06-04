@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-y: scroll;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
@@ -152,114 +156,190 @@
             padding: 80px 20px;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-
-        .section-header h2 {
+        .section-title {
             font-size: 36px;
             font-weight: 700;
             color: #1a2f4a;
-            margin-bottom: 10px;
+            margin-bottom: 70px;
+            text-align: center;
             letter-spacing: -0.5px;
         }
 
-        .section-header .year {
-            font-size: 16px;
-            color: #0099cc;
-            font-weight: 600;
-        }
-
-        .about-content {
+        /* Company Overview Section */
+        .overview-section {
             background: #fff;
             border-radius: 12px;
             padding: 50px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
             border: 1px solid rgba(0, 153, 204, 0.1);
+            margin-bottom: 80px;
         }
 
-        .about-content ul {
-            list-style: none;
-            margin: 0;
+        .overview-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin-bottom: 20px;
         }
 
-        .about-content li {
-            margin-bottom: 24px;
-            padding-left: 40px;
-            position: relative;
+        .overview-section p {
             font-size: 16px;
-            line-height: 1.8;
             color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
-        .about-content li:last-child {
-            margin-bottom: 0;
+        /* Mission & Vision Cards */
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
         }
 
-        .about-content li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #0099cc;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        footer {
-            background: #1a2f4a;
-            border-top: none;
-            padding: 50px 20px;
-            margin-top: 80px;
-            color: #fff;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 14px;
-        }
-
-        .footer-content a {
-            color: #00bfff;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s;
-        }
-
-        .footer-content a:hover {
-            color: #fff;
-        }
-
-        .back-to-top-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #0099cc 0%, #0077aa 100%);
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 24px;
-            box-shadow: 0 6px 20px rgba(0, 153, 204, 0.3);
+        .mission-card, .vision-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 153, 204, 0.1);
             transition: all 0.3s ease;
-            text-decoration: none;
-            border: none;
         }
 
-        .back-to-top-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 153, 204, 0.4);
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 153, 204, 0.3);
+        }
+
+        .mission-card h3, .vision-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0099cc;
+            margin-bottom: 20px;
+        }
+
+        .mission-card p, .vision-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            margin-bottom: 80px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #0099cc 0%, #0077aa 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #0099cc;
+            border: 4px solid #fff;
+            border-radius: 50%;
+            top: 20px;
+            box-shadow: 0 0 0 4px rgba(0, 153, 204, 0.2);
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -58px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -58px;
+        }
+
+        .timeline-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 153, 204, 0.1);
+        }
+
+        .timeline-year {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0099cc;
+            margin-bottom: 10px;
+        }
+
+        .timeline-text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Statistics Section */
+        .statistics-section {
+            margin-bottom: 80px;
+        }
+
+        .statistics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 153, 204, 0.1) 0%, rgba(0, 119, 170, 0.1) 100%);
+            border: 2px solid rgba(0, 153, 204, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 153, 204, 0.6);
+            box-shadow: 0 8px 20px rgba(0, 153, 204, 0.15);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #0099cc;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a2f4a;
         }
 
         .scroll-to-top {
@@ -293,6 +373,37 @@
             display: flex;
         }
 
+        footer {
+            background: #1a2f4a;
+            border-top: none;
+            padding: 50px 20px;
+            margin-top: 80px;
+            color: #fff;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+        }
+
+        .footer-content a {
+            color: #00bfff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-content a:hover {
+            color: #fff;
+        }
+
         @media (max-width: 768px) {
             nav.main-nav {
                 gap: 15px;
@@ -311,18 +422,28 @@
                 padding: 40px 20px;
             }
 
-            .section-header h2 {
+            .section-title {
                 font-size: 28px;
             }
 
-            .about-content {
+            .overview-section {
                 padding: 30px;
             }
 
-            .about-content li {
-                font-size: 14px;
-                margin-bottom: 18px;
-                padding-left: 35px;
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 50px;
+                text-align: left !important;
+            }
+
+            .timeline-item::before {
+                left: 0 !important;
+                right: auto !important;
             }
 
             .footer-content {
@@ -333,17 +454,6 @@
         }
 
         @media (max-width: 480px) {
-            .header-left {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .header-logo {
-                width: 40px;
-                height: 40px;
-                margin-right: 0;
-                margin-bottom: 5px;
-            }
             header {
                 padding: 10px 0;
             }
@@ -366,20 +476,11 @@
                 margin-bottom: 5px;
             }
 
-            .company-branding {
-                text-align: center;
-            }
-
             .company-name {
                 font-size: 18px;
             }
 
-            .company-tagline {
-                font-size: 10px;
-            }
-
             nav.main-nav {
-                width: 100%;
                 flex-wrap: wrap;
                 gap: 6px;
                 justify-content: center;
@@ -387,30 +488,6 @@
 
             nav.main-nav a {
                 font-size: 11px;
-                padding: 5px 8px;
-                border-radius: 4px;
-            }
-            header {
-                padding: 12px 0;
-            }
-
-            .header-container {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .company-name {
-                font-size: 18px;
-            }
-
-            nav.main-nav {
-                flex-wrap: wrap;
-                gap: 8px;
-                justify-content: center;
-            }
-
-            nav.main-nav a {
-                font-size: 12px;
                 padding: 5px 8px;
             }
 
@@ -426,56 +503,20 @@
                 padding: 30px 15px;
             }
 
-            .section-header h2 {
+            .section-title {
                 font-size: 22px;
             }
 
-            .about-content {
+            .overview-section {
                 padding: 20px;
             }
 
-            .about-content li {
-                font-size: 13px;
+            .stat-number {
+                font-size: 36px;
             }
 
-            footer {
-                padding: 25px 15px;
-                font-size: 12px;
-            }
-        }
-
-        @media (max-width: 375px) {
-            .company-name {
-                font-size: 16px;
-            }
-
-            nav.main-nav {
-                gap: 5px;
-            }
-
-            nav.main-nav a {
-                font-size: 11px;
-                padding: 4px 6px;
-            }
-
-            .hero h1 {
-                font-size: 20px;
-            }
-
-            .breadcrumb {
-                font-size: 12px;
-            }
-
-            main {
-                padding: 20px 12px;
-            }
-
-            .section-header h2 {
-                font-size: 20px;
-            }
-
-            .about-content {
-                padding: 15px;
+            .timeline-item {
+                padding-left: 40px;
             }
         }
     </style>
@@ -514,20 +555,88 @@
     </div>
 
     <main>
-        <div class="section-header">
-            <h2>Northwest Group</h2>
-            <div class="year">(2002-2026)</div>
+        <!-- Company Overview Section -->
+        <div class="overview-section">
+            <h2>Company Overview</h2>
+            <p>Northwest Group is a leading supplier of raw materials to the tire, rubber, and conveyor belt industries across India and globally. Since our establishment in 2002, we have grown from a small enterprise to a major player in the industry.</p>
+            <p>We specialize in supplying high-quality raw materials including steel cords, rubber process oils, rubber chemicals, reinforcement fibers, and specialty chemicals. Our commitment to excellence and customer satisfaction has made us a trusted partner for businesses worldwide.</p>
         </div>
 
-        <div class="about-content">
-            <ul>
-                <li>Commenced its operations in the year 2002 as a dedicated facilitator in the tire and rubber industry.</li>
-                <li>Primarily engaged in the supply of raw materials to the Tyre, Rubber & Conveyor belt industry across India and globally.</li>
-                <li>Assisting international suppliers in rapid product promotion in well-established as well as nascent markets.</li>
-                <li>Consistent turnover growth since inception in 2002 — from USD 1 million in 2002 to USD 115 million by 2025, reflecting our market leadership and strategic partnerships.</li>
-                <li>Representing top-tier global manufacturers for Steel Cords, Rubber Process oils/GTL, Rubber Chemicals, Reinforcement Fibres, Specialty chemicals, and emerging materials.</li>
-                <li>Committed to excellence, innovation, and sustainable growth in the global tire and rubber industry through strategic partnerships and customer-centric solutions.</li>
-            </ul>
+        <!-- Mission & Vision Section -->
+        <h2 class="section-title">Our Mission & Vision</h2>
+        <div class="mission-vision-grid">
+            <div class="mission-card">
+                <h3>🎯 Our Mission</h3>
+                <p>To be a trusted facilitator of premium raw materials, delivering exceptional value to our customers through innovation, reliability, and sustainable business practices. We are committed to supporting the growth of the tire and rubber industry worldwide.</p>
+            </div>
+            <div class="vision-card">
+                <h3>🌟 Our Vision</h3>
+                <p>To become the leading global supplier of raw materials for the tire and rubber industry, recognized for our quality, innovation, and customer-centric approach. We envision a future where our partnerships contribute to sustainable industrial growth.</p>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <h2 class="section-title">Our Journey</h2>
+        <div class="timeline-section">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2002</div>
+                        <div class="timeline-text">Northwest Group founded as a dedicated facilitator in the tire and rubber industry</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2008</div>
+                        <div class="timeline-text">Expanded operations to Mumbai with dedicated warehouse for stock-and-sale basis supply</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2013</div>
+                        <div class="timeline-text">Northwest International established as a group company for global expansion</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-text">Achieved partnerships with top-tier global manufacturers and expanded to UAE</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-text">Reached USD 115 million in turnover with presence in multiple countries globally</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <h2 class="section-title">Our Achievements</h2>
+        <div class="statistics-section">
+            <div class="statistics-grid">
+                <div class="stat-card">
+                    <div class="stat-number">23+</div>
+                    <div class="stat-label">Years in Business</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">115M</div>
+                    <div class="stat-label">USD Turnover (2025)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Years Combined Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Corporate Clients Worldwide</div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -538,18 +647,13 @@
         </div>
     </footer>
 
-    <a href="#top" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</a>
-
     <script>
-        const backToTopBtn = document.querySelector('.back-to-top-btn');
         const scrollToTop = document.querySelector('.scroll-to-top');
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
-                backToTopBtn.style.display = 'flex';
                 scrollToTop.classList.add('show');
             } else {
-                backToTopBtn.style.display = 'none';
                 scrollToTop.classList.remove('show');
             }
         });
