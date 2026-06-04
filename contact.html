@@ -42,6 +42,12 @@
             align-items: center;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .header-logo {
             width: 50px;
             height: 50px;
@@ -55,12 +61,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .company-branding {
@@ -89,7 +89,7 @@
         }
 
         nav.main-nav a {
-            color: #fff;
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
@@ -136,7 +136,7 @@
 
         .breadcrumb {
             font-size: 14px;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
         }
 
@@ -156,75 +156,125 @@
             padding: 80px 20px;
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 60px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
         }
 
-        .contact-card {
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Methods Grid */
+        .contact-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .contact-method {
             background: #fff;
             border-radius: 12px;
             padding: 40px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
             border: 1px solid rgba(0, 153, 204, 0.1);
             transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        .contact-method:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
             border-color: rgba(0, 153, 204, 0.3);
         }
 
-        .contact-card h3 {
-            font-size: 24px;
+        .contact-method-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .contact-method h3 {
+            font-size: 22px;
             font-weight: 700;
             color: #1a2f4a;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             letter-spacing: -0.5px;
         }
 
-        .info-item {
-            margin-bottom: 25px;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-label {
-            font-size: 13px;
-            font-weight: 700;
-            color: #0099cc;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 8px;
-        }
-
-        .info-value {
+        .contact-method p {
             font-size: 15px;
             color: #555;
             line-height: 1.8;
+            margin-bottom: 15px;
         }
 
-        .info-value a {
+        .contact-method a {
             color: #0099cc;
             text-decoration: none;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
-        .info-value a:hover {
+        .contact-method a:hover {
             color: #0077aa;
         }
 
+        /* Contact Form Section */
+        .contact-form-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 153, 204, 0.1);
+            margin-bottom: 80px;
+        }
+
+        .contact-form-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin-bottom: 10px;
+        }
+
+        .contact-form-section > p {
+            font-size: 15px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
         .form-group {
-            margin-bottom: 22px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
         }
 
         .form-group label {
-            display: block;
             font-size: 13px;
             font-weight: 700;
             color: #1a2f4a;
@@ -235,7 +285,6 @@
 
         .form-group input,
         .form-group textarea {
-            width: 100%;
             padding: 14px 16px;
             font-size: 14px;
             border: 1px solid #ddd;
@@ -276,45 +325,96 @@
             box-shadow: 0 6px 20px rgba(0, 153, 204, 0.3);
         }
 
+        /* Business Hours Section */
         .hours-section {
-            background: #fff;
+            background: linear-gradient(135deg, rgba(0, 153, 204, 0.08) 0%, rgba(0, 119, 170, 0.08) 100%);
+            border: 2px solid rgba(0, 153, 204, 0.2);
             border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0, 153, 204, 0.1);
             margin-bottom: 60px;
         }
 
-        .hours-section h3 {
+        .hours-section h2 {
             font-size: 24px;
             font-weight: 700;
             color: #1a2f4a;
             margin-bottom: 30px;
-            letter-spacing: -0.5px;
+            text-align: center;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
         }
 
         .hours-item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .hours-location {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0099cc;
+            margin-bottom: 15px;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            font-size: 13px;
+            color: #555;
+            padding: 6px 0;
             display: flex;
             justify-content: space-between;
-            padding: 16px 0;
-            border-bottom: 1px solid #eee;
-            font-size: 15px;
-            color: #555;
         }
 
-        .hours-item:last-child {
-            border-bottom: none;
-        }
-
-        .hours-item span:first-child {
+        .hours-list li strong {
             font-weight: 600;
-            color: #fff;
+            color: #1a2f4a;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 153, 204, 0.15);
+            border: 2px solid rgba(0, 153, 204, 0.3);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #0099cc;
+            transition: all 0.3s ease;
+            z-index: 99;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll-to-top:hover {
+            background: rgba(0, 153, 204, 0.25);
+            border-color: rgba(0, 153, 204, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 153, 204, 0.2);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
         }
 
         footer {
             background: #1a2f4a;
             border-top: none;
             padding: 50px 20px;
+            margin-top: 80px;
             color: #fff;
         }
 
@@ -324,7 +424,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
         }
 
@@ -359,14 +459,46 @@
                 padding: 40px 20px;
             }
 
-            .contact-grid {
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .contact-methods-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .contact-form-section {
+                padding: 30px;
+            }
+
+            .form-grid {
                 grid-template-columns: 1fr;
-                gap: 25px;
-                margin-bottom: 40px;
+                gap: 20px;
+            }
+
+            .hours-section {
+                padding: 30px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
         }
 
         @media (max-width: 480px) {
+            header {
+                padding: 10px 0;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 15px;
+            }
+
             .header-left {
                 flex-direction: column;
                 text-align: center;
@@ -378,51 +510,12 @@
                 margin-right: 0;
                 margin-bottom: 5px;
             }
-            header {
-                padding: 10px 0;
-            }
-
-            .header-container {
-                flex-direction: column;
-                gap: 10px;
-                padding: 0 15px;
-            }
-
-        .header-logo {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .header-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-            .company-branding {
-                text-align: center;
-            }
 
             .company-name {
                 font-size: 18px;
             }
 
-            .company-tagline {
-                font-size: 10px;
-            }
-
             nav.main-nav {
-                width: 100%;
                 flex-wrap: wrap;
                 gap: 6px;
                 justify-content: center;
@@ -430,30 +523,6 @@
 
             nav.main-nav a {
                 font-size: 11px;
-                padding: 5px 8px;
-                border-radius: 4px;
-            }
-            header {
-                padding: 12px 0;
-            }
-
-            .header-container {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .company-name {
-                font-size: 18px;
-            }
-
-            nav.main-nav {
-                flex-wrap: wrap;
-                gap: 8px;
-                justify-content: center;
-            }
-
-            nav.main-nav a {
-                font-size: 12px;
                 padding: 5px 8px;
             }
 
@@ -469,25 +538,42 @@
                 padding: 30px 15px;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .section-header h2 {
+                font-size: 24px;
             }
 
-            .contact-card,
-            .hours-section {
+            .contact-methods-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .contact-method {
                 padding: 25px;
             }
 
-            .contact-card h3,
-            .hours-section h3 {
+            .contact-method-icon {
+                font-size: 40px;
+            }
+
+            .contact-method h3 {
                 font-size: 18px;
             }
 
-            .form-group input,
-            .form-group textarea {
-                padding: 12px 14px;
-                font-size: 13px;
+            .contact-form-section {
+                padding: 20px;
+            }
+
+            .contact-form-section h2 {
+                font-size: 20px;
+            }
+
+            .hours-section {
+                padding: 20px;
+            }
+
+            .hours-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             footer {
@@ -518,26 +604,12 @@
                 padding: 20px 12px;
             }
 
-            .contact-card h3,
-            .hours-section h3 {
-                font-size: 16px;
-            }
-        }
-
-            .contact-card,
-            .hours-section {
-                padding: 30px;
-            }
-
-            .contact-card h3,
-            .hours-section h3 {
+            .section-header h2 {
                 font-size: 20px;
             }
 
-            .footer-content {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
+            .contact-method h3 {
+                font-size: 16px;
             }
         }
     </style>
@@ -545,7 +617,6 @@
 <body>
     <header>
         <div class="header-container">
-            <div class="header-left">
             <div class="header-left">
                 <div class="header-logo">
                     <img src="images/companylogo.png" alt="Company Logo">
@@ -565,78 +636,125 @@
         </div>
     </header>
 
+    <div class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</div>
+
     <div class="hero">
         <div class="hero-content">
-            <h1>Get In Touch</h1>
+            <h1>Contact Us</h1>
             <div class="breadcrumb">
-                <a href="index.html">Home</a> > <span>Contact Us</span>
+                <a href="index.html">Home</a> > <span>Contact</span>
             </div>
         </div>
     </div>
 
     <main>
-        <div class="contact-grid">
-            <div class="contact-card">
-                <h3>📍 Contact Information</h3>
-                <div class="info-item">
-                    <div class="info-label">Email</div>
-                    <div class="info-value"><a href="mailto:skutsav@northwestgroup.in">skutsav@northwestgroup.in</a></div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Phone</div>
-                    <div class="info-value">+91-9871152984</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Delhi (Head Office)</div>
-                    <div class="info-value">157, Ansal Chambers II<br>Bhikaji Cama Place<br>New Delhi</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Mumbai Office</div>
-                    <div class="info-value">303, Vikas Centre<br>Chembur East<br>Mumbai</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label">Dubai Office</div>
-                    <div class="info-value">Northwest Global F.Z.E<br>BC-64, Ajman Free Zone<br>Ajman, UAE</div>
-                </div>
+        <div class="section-header">
+            <h2>Get in Touch</h2>
+            <p>We're here to help and answer any questions you might have. Reach out to us today!</p>
+        </div>
+
+        <!-- Contact Methods Grid -->
+        <div class="contact-methods-grid">
+            <div class="contact-method">
+                <span class="contact-method-icon">📧</span>
+                <h3>Email</h3>
+                <p>Send us an email anytime. We typically respond within 24 hours.</p>
+                <a href="mailto:info@northwestgroup.in">info@northwestgroup.in</a>
             </div>
 
-            <div class="contact-card">
-                <h3>💬 Send us a Message</h3>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="form-button">Send Message</button>
-                </form>
+            <div class="contact-method">
+                <span class="contact-method-icon">📞</span>
+                <h3>Phone</h3>
+                <p>Call us during business hours. We're happy to discuss your needs.</p>
+                <a href="tel:+91-22-XXXX-XXXX">+91-22-XXXX-XXXX</a>
+            </div>
+
+            <div class="contact-method">
+                <span class="contact-method-icon">📍</span>
+                <h3>Headquarters</h3>
+                <p>Visit our Mumbai office for in-person consultation and support.</p>
+                <a href="#">Mumbai, India</a>
+            </div>
+
+            <div class="contact-method">
+                <span class="contact-method-icon">🌍</span>
+                <h3>Global Presence</h3>
+                <p>We operate across multiple countries for seamless service.</p>
+                <a href="#">International Offices</a>
             </div>
         </div>
 
+        <!-- Contact Form Section -->
+        <div class="contact-form-section">
+            <h2>Send us a Message</h2>
+            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="form-button">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Business Hours Section -->
         <div class="hours-section">
-            <h3>⏰ Business Hours</h3>
-            <div class="hours-item">
-                <span>Monday - Friday</span>
-                <span>9:00 AM - 6:00 PM</span>
-            </div>
-            <div class="hours-item">
-                <span>Saturday</span>
-                <span>10:00 AM - 2:00 PM</span>
-            </div>
-            <div class="hours-item">
-                <span>Sunday</span>
-                <span>Closed</span>
+            <h2>Business Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <div class="hours-location">📍 Mumbai Office</div>
+                    <ul class="hours-list">
+                        <li><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</li>
+                        <li><strong>Saturday:</strong> 10:00 AM - 2:00 PM</li>
+                        <li><strong>Sunday:</strong> Closed</li>
+                    </ul>
+                </div>
+
+                <div class="hours-item">
+                    <div class="hours-location">🌍 UAE Office</div>
+                    <ul class="hours-list">
+                        <li><strong>Saturday - Thursday:</strong> 9:00 AM - 6:00 PM</li>
+                        <li><strong>Friday:</strong> 9:00 AM - 1:00 PM</li>
+                        <li><strong>Holiday:</strong> As per UAE calendar</li>
+                    </ul>
+                </div>
+
+                <div class="hours-item">
+                    <div class="hours-location">🕐 Response Time</div>
+                    <ul class="hours-list">
+                        <li><strong>Email:</strong> Within 24 hours</li>
+                        <li><strong>Phone:</strong> Immediate</li>
+                        <li><strong>Form:</strong> Within 24 hours</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </main>
@@ -649,11 +767,14 @@
     </footer>
 
     <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            form.reset();
+        const scrollToTop = document.querySelector('.scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTop.classList.add('show');
+            } else {
+                scrollToTop.classList.remove('show');
+            }
         });
     </script>
 </body>
