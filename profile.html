@@ -82,15 +82,24 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #0099cc 0%, #0077aa 100%);
+            background: url('images/backtop.png') center/cover no-repeat;
+            background-attachment: fixed;
             padding: 80px 20px;
             text-align: center;
             color: #fff;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            opacity: 0.85;
         }
 
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
