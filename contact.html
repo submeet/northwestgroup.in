@@ -176,12 +176,19 @@
             margin: 0 auto;
         }
 
+        /* Two Column Main Layout */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
         /* Locations Grid */
         .locations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         /* Individual Location Cards */
@@ -265,7 +272,9 @@
             padding: 50px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
             border: 1px solid rgba(0, 153, 204, 0.1);
-            margin-bottom: 80px;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
         }
 
         .form-section h2 {
@@ -369,6 +378,18 @@
             color: #fff;
         }
 
+        @media (max-width: 968px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .form-section {
+                position: static;
+                top: auto;
+            }
+        }
+
         @media (max-width: 768px) {
             nav.main-nav {
                 gap: 15px;
@@ -392,8 +413,8 @@
             }
 
             .locations-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 20px;
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .form-section {
@@ -553,12 +574,14 @@
 
     <main>
         <div class="section-header">
-            <h2>Our Office Locations</h2>
+            <h2>Get in Touch</h2>
             <p>Connect with us at any of our global locations. We're here to support your needs.</p>
         </div>
 
-        <!-- Office Locations Grid -->
-        <div class="locations-grid">
+        <!-- Two Column Wrapper: Locations Left, Form Right -->
+        <div class="contact-wrapper">
+            <!-- Office Locations Grid -->
+            <div class="locations-grid">
             <!-- Delhi Office -->
             <div class="location-card">
                 <div class="location-icon">🏢</div>
@@ -678,10 +701,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
 
-        <!-- Contact Form Section -->
-        <div class="form-section">
+            <!-- Contact Form Section -->
+            <div class="form-section">
             <h2>💬 Send us a Message</h2>
             <p>Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
             <form>
@@ -703,6 +726,7 @@
                 </div>
                 <button type="submit" class="form-button">Send Message</button>
             </form>
+            </div>
         </div>
     </main>
 
