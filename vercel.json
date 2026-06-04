@@ -1,9 +1,7 @@
 {
-  "buildCommand": "echo 'Optimized static site'",
-  "outputDirectory": ".",
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/(.*)\\.html",
       "headers": [
         {
           "key": "Cache-Control",
@@ -21,19 +19,13 @@
       ]
     },
     {
-      "source": "/(.*)\.html",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
+          "value": "public, max-age=3600"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index.html"
     }
   ]
 }
