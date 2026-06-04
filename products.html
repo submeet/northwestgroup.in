@@ -274,7 +274,101 @@
             height: 50px;
             border-radius: 50%;
             display: none;
-            align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 0;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .company-name {
+                font-size: 18px;
+            }
+
+            nav.main-nav {
+                flex-wrap: wrap;
+                gap: 8px;
+                justify-content: center;
+            }
+
+            nav.main-nav a {
+                font-size: 12px;
+                padding: 5px 8px;
+            }
+
+            .hero {
+                padding: 50px 15px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            main {
+                padding: 30px 15px;
+            }
+
+            .section-header h2 {
+                font-size: 22px;
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .products-table th,
+            .products-table td {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            footer {
+                padding: 25px 15px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .company-name {
+                font-size: 16px;
+            }
+
+            nav.main-nav {
+                gap: 5px;
+            }
+
+            nav.main-nav a {
+                font-size: 11px;
+                padding: 4px 6px;
+            }
+
+            .hero h1 {
+                font-size: 20px;
+            }
+
+            main {
+                padding: 20px 12px;
+            }
+
+            .section-header h2 {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+        }
             justify-content: center;
             cursor: pointer;
             font-size: 24px;
