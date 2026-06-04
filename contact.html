@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="build-timestamp" content="2026-06-04T12:10:00Z">
     <title>Contact Us - Northwest Group</title>
     <style>
         * {
@@ -12,19 +13,20 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fb 100%);
+            min-height: 100vh;
         }
 
         header {
-            background-color: #1a2f4a;
-            padding: 15px 0;
+            background: linear-gradient(135deg, #1a2f4a 0%, #2c4563 100%);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .header-container {
@@ -39,73 +41,48 @@
         .company-branding {
             display: flex;
             flex-direction: column;
-            margin-bottom: 0;
+            gap: 4px;
         }
 
         .company-name {
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 22px;
+            font-weight: 700;
             color: #fff;
-            margin-bottom: 2px;
+            letter-spacing: -0.5px;
         }
 
         .company-tagline {
-            font-size: 11px;
-            color: #b0c4de;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
             letter-spacing: 0.5px;
+            font-weight: 500;
         }
 
         nav.main-nav {
             display: flex;
-            gap: 25px;
-            margin-top: 0;
+            gap: 30px;
         }
 
         nav.main-nav a {
-            color: #fff;
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
 
-        nav.main-nav a:hover {
-            background-color: #0099cc;
-        }
-
+        nav.main-nav a:hover,
         nav.main-nav a.active {
-            background-color: #0099cc;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .breadcrumb {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .breadcrumb a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
+            color: #fff;
+            background: rgba(0, 153, 204, 0.2);
+            border-bottom: 2px solid #00bfff;
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><rect fill="%234a7ba7" width="1200" height="300"/></svg>');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 20px;
+            background: linear-gradient(135deg, #0099cc 0%, #0077aa 100%);
+            padding: 80px 20px;
             text-align: center;
             color: #fff;
         }
@@ -116,175 +93,194 @@
         }
 
         .hero h1 {
-            font-size: 42px;
-            font-weight: bold;
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 15px;
+            letter-spacing: -1px;
         }
 
         .breadcrumb {
             font-size: 14px;
-            color: #e0e0e0;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
         }
 
         .breadcrumb a {
             color: #fff;
             text-decoration: none;
+            transition: opacity 0.3s;
         }
 
         .breadcrumb a:hover {
-            text-decoration: underline;
+            opacity: 0.8;
         }
 
-        .page-title {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            color: #333;
-            border-bottom: 2px solid #333;
-            padding-bottom: 15px;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
         }
 
-        .contact-container {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
-        .contact-info {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border: 1px solid #ddd;
+        .contact-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 153, 204, 0.1);
+            transition: all 0.3s ease;
         }
 
-        .contact-info h3 {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 25px;
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 153, 204, 0.3);
+        }
+
+        .contact-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
         }
 
         .info-item {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
         }
 
         .info-label {
-            font-size: 14px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0099cc;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
         }
 
         .info-value {
             font-size: 15px;
             color: #555;
+            line-height: 1.8;
         }
 
         .info-value a {
-            color: #0066cc;
+            color: #0099cc;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         .info-value a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-form {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border: 1px solid #ddd;
-        }
-
-        .contact-form h3 {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 25px;
+            color: #0077aa;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .form-group label {
             display: block;
-            font-size: 14px;
-            font-weight: bold;
-            color: #333;
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a2f4a;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
             margin-bottom: 8px;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
+            padding: 14px 16px;
             font-size: 14px;
             border: 1px solid #ddd;
-            font-family: Arial, sans-serif;
+            border-radius: 6px;
+            font-family: inherit;
             color: #333;
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #333;
-            box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.1);
+            border-color: #0099cc;
+            box-shadow: 0 0 0 3px rgba(0, 153, 204, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px;
         }
 
         .form-button {
-            background-color: #333;
+            background: linear-gradient(135deg, #0099cc 0%, #0077aa 100%);
             color: #fff;
-            padding: 12px 30px;
-            border: 1px solid #333;
-            font-size: 14px;
-            font-weight: 500;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .form-button:hover {
-            background-color: #555;
-            border-color: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 153, 204, 0.3);
         }
 
         .hours-section {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border: 1px solid #ddd;
-            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 153, 204, 0.1);
+            margin-bottom: 60px;
         }
 
         .hours-section h3 {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
         }
 
         .hours-item {
             display: flex;
             justify-content: space-between;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 10px;
+            padding: 16px 0;
+            border-bottom: 1px solid #eee;
             font-size: 15px;
+            color: #555;
         }
 
         .hours-item:last-child {
             border-bottom: none;
         }
 
+        .hours-item span:first-child {
+            font-weight: 600;
+            color: #1a2f4a;
+        }
+
         footer {
-            background-color: #f5f5f5;
-            border-top: 1px solid #ddd;
-            padding: 30px 20px;
-            margin-top: 60px;
-            font-size: 12px;
-            color: #666;
+            background: #1a2f4a;
+            border-top: none;
+            padding: 50px 20px;
+            color: #fff;
         }
 
         .footer-content {
@@ -293,40 +289,61 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
         }
 
         .footer-content a {
-            color: #333;
+            color: #00bfff;
             text-decoration: none;
-            margin-left: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
         }
 
         .footer-content a:hover {
-            text-decoration: underline;
+            color: #fff;
         }
 
         @media (max-width: 768px) {
-            .page-title {
-                font-size: 22px;
-            }
-
             nav.main-nav {
-                flex-direction: column;
-                gap: 10px;
+                gap: 15px;
             }
 
-            .contact-container {
+            nav.main-nav a {
+                font-size: 13px;
+                padding: 6px 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+
+            .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 25px;
+                margin-bottom: 40px;
+            }
+
+            .contact-card,
+            .hours-section {
+                padding: 30px;
+            }
+
+            .contact-card h3,
+            .hours-section h3 {
+                font-size: 20px;
             }
 
             .footer-content {
                 flex-direction: column;
                 gap: 15px;
-            }
-
-            .footer-content a {
-                margin-left: 0;
+                text-align: center;
             }
         }
     </style>
@@ -343,25 +360,24 @@
                 <a href="about.html">About Us</a>
                 <a href="profile.html">Profile</a>
                 <a href="products.html">Products</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="contact.html" class="active">Contact Us</a>
             </nav>
         </div>
     </header>
 
     <div class="hero">
         <div class="hero-content">
-            <h1>Contact Us</h1>
+            <h1>Get In Touch</h1>
             <div class="breadcrumb">
-                <a href="index.html">Home</a> :: <span>Contact Us</span>
+                <a href="index.html">Home</a> > <span>Contact Us</span>
             </div>
         </div>
     </div>
 
     <main>
-
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>📍 Contact Information</h3>
                 <div class="info-item">
                     <div class="info-label">Email</div>
                     <div class="info-value"><a href="mailto:skutsav@northwestgroup.in">skutsav@northwestgroup.in</a></div>
@@ -371,7 +387,7 @@
                     <div class="info-value">+91-9871152984</div>
                 </div>
                 <div class="info-item">
-                    <div class="info-label">Head Office (Delhi)</div>
+                    <div class="info-label">Delhi (Head Office)</div>
                     <div class="info-value">157, Ansal Chambers II<br>Bhikaji Cama Place<br>New Delhi</div>
                 </div>
                 <div class="info-item">
@@ -384,8 +400,8 @@
                 </div>
             </div>
 
-            <div class="contact-form">
-                <h3>Send us a Message</h3>
+            <div class="contact-card">
+                <h3>💬 Send us a Message</h3>
                 <form>
                     <div class="form-group">
                         <label for="name">Name *</label>
@@ -409,7 +425,7 @@
         </div>
 
         <div class="hours-section">
-            <h3>Business Hours</h3>
+            <h3>⏰ Business Hours</h3>
             <div class="hours-item">
                 <span>Monday - Friday</span>
                 <span>9:00 AM - 6:00 PM</span>
@@ -427,9 +443,18 @@
 
     <footer>
         <div class="footer-content">
-            <div>Copyright &copy; 2026 | Powered by Northwest Group</div>
-            <a href="#top">Back to Top</a>
+            <div>Copyright © 2026 | Powered by Northwest Group</div>
+            <a href="#top">↑ Back to Top</a>
         </div>
     </footer>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            form.reset();
+        });
+    </script>
 </body>
 </html>
