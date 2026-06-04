@@ -82,6 +82,7 @@
 
         .hero {
             background: url('images/backtop.png') center/cover no-repeat;
+            background-attachment: fixed;
             padding: 80px 20px;
             text-align: center;
             color: #fff;
@@ -89,11 +90,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            opacity: 0.85;
         }
 
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
