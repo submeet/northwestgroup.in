@@ -707,7 +707,7 @@
             <div class="form-section">
             <h2>💬 Send us a Message</h2>
             <p>Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-            <form action="https://usebasin.com/f/submeetahi" method="POST">
+            <form id="contactForm">
                 <div class="form-group">
                     <label for="name">Name *</label>
                     <input type="text" id="name" name="name" required>
@@ -737,10 +737,43 @@
         </div>
     </footer>
 
-    <script>
-        // Basin.io handles form submission automatically
-        // Form submissions sent to: submeetahi@gmail.com
-        // No backend required - emails delivered instantly
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+
+    <script type="text/javascript">
+        // Initialize EmailJS
+        emailjs.init('SITE_ID_WILL_BE_ADDED');
+
+        // Handle form submission
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Send email using EmailJS
+            emailjs.send('SERVICE_ID_WILL_BE_ADDED', 'TEMPLATE_ID_WILL_BE_ADDED', {
+                to_email: 'submeetahi@gmail.com',
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message
+            })
+            .then(function(response) {
+                // Success
+                alert('Message sent successfully! We will get back to you soon.');
+                form.reset();
+            }, function(error) {
+                // Error
+                alert('Failed to send message. Please try again or contact us directly.');
+                console.log('FAILED...', error);
+            });
+        });
     </script>
 </body>
 </html>
