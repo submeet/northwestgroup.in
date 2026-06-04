@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-y: scroll;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
@@ -38,6 +42,12 @@
             align-items: center;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .header-logo {
             width: 50px;
             height: 50px;
@@ -51,12 +61,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .company-branding {
@@ -85,7 +89,7 @@
         }
 
         nav.main-nav a {
-            color: #fff;
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
@@ -132,7 +136,7 @@
 
         .breadcrumb {
             font-size: 14px;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
         }
 
@@ -160,108 +164,180 @@
         .section-header h2 {
             font-size: 36px;
             font-weight: 700;
-            color: #fff;
+            color: #1a2f4a;
             margin-bottom: 15px;
             letter-spacing: -0.5px;
         }
 
         .section-header p {
             font-size: 16px;
-            color: rgba(255, 255, 255, 0.8);
+            color: #7f8c8d;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .section {
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 50px;
-            text-align: center;
-            letter-spacing: -0.5px;
-        }
-
-        .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        /* Category Section */
+        .category-section {
             margin-bottom: 60px;
         }
 
-        .industry-item {
-            background: #fff;
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0, 153, 204, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #0099cc;
         }
 
-        .industry-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        .category-icon {
+            font-size: 32px;
+            min-width: 40px;
+        }
+
+        .category-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a2f4a;
+            letter-spacing: -0.5px;
+        }
+
+        .category-description {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-left: 55px;
+            margin-bottom: 20px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 153, 204, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
             border-color: rgba(0, 153, 204, 0.3);
         }
 
-        .industry-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .industry-name {
-            font-size: 16px;
+        .product-number {
+            font-size: 11px;
             font-weight: 700;
-            color: #fff;
-            letter-spacing: -0.3px;
-        }
-
-        .products-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0, 153, 204, 0.1);
-        }
-
-        .products-table thead {
-            background: linear-gradient(135deg, #0099cc 0%, #0077aa 100%);
-            color: #fff;
-        }
-
-        .products-table th {
-            padding: 18px;
-            text-align: left;
-            font-weight: 700;
-            font-size: 14px;
+            color: #0099cc;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
 
-        .products-table td {
-            padding: 16px 18px;
-            border-bottom: 1px solid #eee;
-            font-size: 14px;
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .product-source {
+            font-size: 12px;
+            color: #0099cc;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .product-description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+            flex-grow: 1;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0, 153, 204, 0.1);
+        }
+
+        /* Benefits/Features List */
+        .product-features {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #7f8c8d;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .product-feature-tag {
+            background: rgba(0, 153, 204, 0.08);
+            color: #0099cc;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        /* Principals Grid */
+        .principals-intro {
+            background: linear-gradient(135deg, rgba(0, 153, 204, 0.08) 0%, rgba(0, 119, 170, 0.08) 100%);
+            border: 1px solid rgba(0, 153, 204, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .principals-intro h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin-bottom: 15px;
+        }
+
+        .principals-intro p {
+            font-size: 15px;
             color: #555;
+            line-height: 1.8;
         }
 
-        .products-table tbody tr:last-child td {
-            border-bottom: none;
+        .scroll-to-top {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 153, 204, 0.15);
+            border: 2px solid rgba(0, 153, 204, 0.3);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #0099cc;
+            transition: all 0.3s ease;
+            z-index: 99;
+            backdrop-filter: blur(5px);
         }
 
-        .products-table tbody tr:hover {
-            background: linear-gradient(135deg, rgba(0, 153, 204, 0.03) 0%, rgba(0, 119, 170, 0.03) 100%);
+        .scroll-to-top:hover {
+            background: rgba(0, 153, 204, 0.25);
+            border-color: rgba(0, 153, 204, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 153, 204, 0.2);
         }
 
-        .products-table tbody tr:nth-child(even) {
-            background: #f9f9fb;
+        .scroll-to-top.show {
+            display: flex;
         }
 
         footer {
@@ -278,7 +354,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
         }
 
@@ -295,20 +371,55 @@
             color: #fff;
         }
 
-        .back-to-top-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #0099cc 0%, #0077aa 100%);
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: none;
+        @media (max-width: 768px) {
+            nav.main-nav {
+                gap: 15px;
+            }
+
+            nav.main-nav a {
+                font-size: 13px;
+                padding: 6px 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .category-title {
+                font-size: 24px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
         }
 
         @media (max-width: 480px) {
+            header {
+                padding: 10px 0;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 15px;
+            }
+
             .header-left {
                 flex-direction: column;
                 text-align: center;
@@ -320,51 +431,12 @@
                 margin-right: 0;
                 margin-bottom: 5px;
             }
-            header {
-                padding: 10px 0;
-            }
-
-            .header-container {
-                flex-direction: column;
-                gap: 10px;
-                padding: 0 15px;
-            }
-
-        .header-logo {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .header-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-            .company-branding {
-                text-align: center;
-            }
 
             .company-name {
                 font-size: 18px;
             }
 
-            .company-tagline {
-                font-size: 10px;
-            }
-
             nav.main-nav {
-                width: 100%;
                 flex-wrap: wrap;
                 gap: 6px;
                 justify-content: center;
@@ -372,30 +444,6 @@
 
             nav.main-nav a {
                 font-size: 11px;
-                padding: 5px 8px;
-                border-radius: 4px;
-            }
-            header {
-                padding: 12px 0;
-            }
-
-            .header-container {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .company-name {
-                font-size: 18px;
-            }
-
-            nav.main-nav {
-                flex-wrap: wrap;
-                gap: 8px;
-                justify-content: center;
-            }
-
-            nav.main-nav a {
-                font-size: 12px;
                 padding: 5px 8px;
             }
 
@@ -412,22 +460,28 @@
             }
 
             .section-header h2 {
-                font-size: 22px;
+                font-size: 24px;
             }
 
-            .industries-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .section-title {
+            .category-title {
                 font-size: 20px;
             }
 
-            .products-table th,
-            .products-table td {
-                padding: 10px;
-                font-size: 12px;
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .product-card {
+                padding: 20px;
+            }
+
+            .category-header {
+                margin-bottom: 20px;
+            }
+
+            .category-icon {
+                font-size: 28px;
             }
 
             footer {
@@ -462,158 +516,9 @@
                 font-size: 20px;
             }
 
-            .section-title {
-                font-size: 18px;
+            .product-name {
+                font-size: 16px;
             }
-        }
-            justify-content: center;
-            cursor: pointer;
-            font-size: 24px;
-            box-shadow: 0 6px 20px rgba(0, 153, 204, 0.3);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            border: none;
-        }
-
-        .back-to-top-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 153, 204, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            nav.main-nav {
-                gap: 15px;
-            }
-
-            nav.main-nav a {
-                font-size: 13px;
-                padding: 6px 10px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            main {
-                padding: 40px 20px;
-            }
-
-            .section-header h2 {
-                font-size: 28px;
-            }
-
-            .section-title {
-                font-size: 22px;
-                margin-bottom: 30px;
-            }
-
-            .industries-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .industry-item {
-                padding: 25px;
-            }
-
-            .products-table th,
-            .products-table td {
-                padding: 12px;
-                font-size: 13px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        }
-        @media (max-width: 320px) {
-            .company-name {
-                font-size: 14px;
-            }
-
-            .company-tagline {
-                font-size: 9px;
-            }
-
-            nav.main-nav {
-                gap: 3px;
-            }
-
-            nav.main-nav a {
-                font-size: 10px;
-                padding: 3px 4px;
-            }
-
-            .hero h1 {
-                font-size: 18px;
-            }
-
-            main {
-                padding: 15px 10px;
-            }
-
-            .section-header h2 {
-                font-size: 18px;
-            }
-
-            .industries-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .industry-item {
-                padding: 15px;
-            }
-
-            .industry-icon {
-                font-size: 36px;
-            }
-
-            .industry-name {
-                font-size: 14px;
-            }
-
-            .products-table th,
-            .products-table td {
-                padding: 8px;
-                font-size: 11px;
-            }
-
-            .products-table th {
-                font-size: 10px;
-            }
-        }
-        .scroll-to-top {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            width: 45px;
-            height: 45px;
-            background: rgba(0, 153, 204, 0.15);
-            border: 2px solid rgba(0, 153, 204, 0.3);
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 20px;
-            color: #0099cc;
-            transition: all 0.3s ease;
-            z-index: 99;
-            backdrop-filter: blur(5px);
-        }
-
-        .scroll-to-top:hover {
-            background: rgba(0, 153, 204, 0.25);
-            border-color: rgba(0, 153, 204, 0.5);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0, 153, 204, 0.2);
-        }
-
-        .scroll-to-top.show {
-            display: flex;
         }
     </style>
 </head>
@@ -638,162 +543,255 @@
             </nav>
         </div>
     </header>
+
     <div class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</div>
 
     <div class="hero">
         <div class="hero-content">
             <h1>Products & Principals</h1>
             <div class="breadcrumb">
-                <a href="index.html">Home</a> > <span>Products & Principals</span>
+                <a href="index.html">Home</a> > <span>Products</span>
             </div>
         </div>
     </div>
 
     <main>
         <div class="section-header">
-            <h2>Our Product Portfolio</h2>
-            <p>Representing top-tier global manufacturers across the tire, rubber, and specialty chemicals industries</p>
+            <h2>Our Product Range</h2>
+            <p>Premium raw materials and specialized products from world-class manufacturers for the tire and rubber industry</p>
         </div>
 
-        <section class="section">
-            <h2 class="section-title">Industries We Serve</h2>
-            <div class="industries-grid">
-                <div class="industry-item">
-                    <span class="industry-icon">🚗</span>
-                    <div class="industry-name">Tyre & Rubber Industry</div>
-                </div>
-                <div class="industry-item">
-                    <span class="industry-icon">➤</span>
-                    <div class="industry-name">Conveyor Belt Industry</div>
-                </div>
-                <div class="industry-item">
-                    <span class="industry-icon">🔧</span>
-                    <div class="industry-name">Hose Industry</div>
-                </div>
-                <div class="industry-item">
-                    <span class="industry-icon">⚙️</span>
-                    <div class="industry-name">Brake Lining</div>
-                </div>
-                <div class="industry-item">
-                    <span class="industry-icon">🚙</span>
-                    <div class="industry-name">Automotive Components</div>
-                </div>
-                <div class="industry-item">
-                    <span class="industry-icon">🏢</span>
-                    <div class="industry-name">Construction Chemicals</div>
+        <!-- Steel Products Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-icon">🔧</div>
+                <h3 class="category-title">Steel & Wire Products</h3>
+            </div>
+            <p class="category-description">High-quality steel products for tire reinforcement and construction</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-number">Product 1</div>
+                    <div class="product-name">Steel Tyre Cord, Bead Wire & Hose Wire</div>
+                    <div class="product-source">Jiangsu Xingda Steel Tyre Cord Co. Ltd, China</div>
+                    <div class="product-description">Premium steel wires designed for maximum tire durability and performance. Essential reinforcement material for tire sidewalls and bead areas.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">High Strength</span>
+                        <span class="product-feature-tag">Durable</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="section">
-            <h2 class="section-title">Principal Companies & Products</h2>
-            <table class="products-table">
-                <thead>
-                    <tr>
-                        <th style="width: 5%;">Sr</th>
-                        <th style="width: 45%;">Company Name</th>
-                        <th style="width: 50%;">Products</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Jiangsu Xingda Steel Tyre Cord Co. Ltd, China</td>
-                        <td>Steel Tyre Cord, Bead Wire & Hose Wire</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Sinochem High Performance Fibres (Sinochem Group), China</td>
-                        <td>Aramid Yarn/Pulp and Fiber</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Sennics Co., Ltd. (Sinochem Group), China</td>
-                        <td>Rubber Chemicals / Insoluble Sulphur</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Sino Legend Chemical Company Ltd., China</td>
-                        <td>Tackifying / Curing Resins</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Chambroad Sinopoly China</td>
-                        <td>IIR, BIIR, CIIR, Bio-based Materials</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Transfar, China</td>
-                        <td>Rubber-PBR-NI-ND</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Yikesi, China</td>
-                        <td>Poly Isoprene Rubber, SKI3</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Nanjing Shuguang Silane Chemical Co., Ltd., China</td>
-                        <td>Silane Coupling Agents</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Shell Singapore/Hong Kong</td>
-                        <td>Rubber Process Oil and Base Oil</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Longxing Chemical Stock Co., Ltd., China</td>
-                        <td>Carbon Black</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Bestory Industries Co. Ltd., China</td>
-                        <td>Nylon Tyre Yarn & Tyre Cord Fabric</td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td>Zhejiang Unifull Hi-Tech Industry Co. Ltd, China</td>
-                        <td>Polyester Yarn & Tyre Cord Fabric</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>Flow Polymers, LLC-USA</td>
-                        <td>Processing Aid / Homogenizing Agent</td>
-                    </tr>
-                    <tr>
-                        <td>14</td>
-                        <td>Sanliang, China</td>
-                        <td>Cobalt Adhesion Promoter</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>Twinkle Star Chem Technology Limited, China</td>
-                        <td>Hydrocarbon Resin / Misc. Chemicals</td>
-                    </tr>
-                    <tr>
-                        <td>16</td>
-                        <td>Fin International, Thailand</td>
-                        <td>Curing Release Agents</td>
-                    </tr>
-                    <tr>
-                        <td>17</td>
-                        <td>Cheeshine, China</td>
-                        <td>Resins</td>
-                    </tr>
-                    <tr>
-                        <td>18</td>
-                        <td>Dua Kuda</td>
-                        <td>Stearic Acid</td>
-                    </tr>
-                    <tr>
-                        <td>19</td>
-                        <td>Weihai Runtong / Jintai, China</td>
-                        <td>Tyre Bladders / Turn Up Bladders</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <!-- Fiber & Yarn Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-icon">🧵</div>
+                <h3 class="category-title">Fibers & Yarns</h3>
+            </div>
+            <p class="category-description">Advanced reinforcement fibers and yarns for tire and rubber applications</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-number">Product 2</div>
+                    <div class="product-name">Aramid Yarn & Pulp</div>
+                    <div class="product-source">Sinochem High Performance Fibres, China</div>
+                    <div class="product-description">High-performance aramid fibers offering excellent heat resistance and tensile strength. Used in tire carcass and belt reinforcement.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Heat Resistant</span>
+                        <span class="product-feature-tag">High Strength</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 11</div>
+                    <div class="product-name">Nylon Tyre Yarn & Fabric</div>
+                    <div class="product-source">Bestory Industries Co. Ltd., China</div>
+                    <div class="product-description">Quality nylon yarns and pre-fabricated fabrics for tire construction. Excellent dimensional stability and strength retention.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Stable</span>
+                        <span class="product-feature-tag">Strong</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 12</div>
+                    <div class="product-name">Polyester Yarn & Fabric</div>
+                    <div class="product-source">Zhejiang Unifull Hi-Tech Industry Co. Ltd, China</div>
+                    <div class="product-description">High-modulus polyester yarns for tire belt reinforcement. Excellent fatigue resistance and durability.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Fatigue Resistant</span>
+                        <span class="product-feature-tag">Durable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rubber Materials Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-icon">🏭</div>
+                <h3 class="category-title">Rubber Materials</h3>
+            </div>
+            <p class="category-description">Various synthetic and natural rubber polymers for tire manufacturing</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-number">Product 5</div>
+                    <div class="product-name">IIR, BIIR, CIIR & Bio-based</div>
+                    <div class="product-source">Chambroad Sinopoly, China</div>
+                    <div class="product-description">Isobutylene-based rubber polymers for tire inner tubes and seals. Superior air retention properties.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Air Retention</span>
+                        <span class="product-feature-tag">Bio-based</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 6</div>
+                    <div class="product-name">Rubber-PBR, Natural & Synthetic</div>
+                    <div class="product-source">Transfar, China</div>
+                    <div class="product-description">Polybutadiene rubber and natural rubber blends for tire tread and carcass compounds. Excellent resilience and wear resistance.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Resilient</span>
+                        <span class="product-feature-tag">Wear Resistant</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 7</div>
+                    <div class="product-name">Poly Isoprene Rubber (SKI3)</div>
+                    <div class="product-source">Yikesi, China</div>
+                    <div class="product-description">Synthetic isoprene rubber offering performance close to natural rubber. Ideal for high-performance tire applications.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">High Performance</span>
+                        <span class="product-feature-tag">Natural-like</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chemicals & Additives Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-icon">⚗️</div>
+                <h3 class="category-title">Chemicals & Additives</h3>
+            </div>
+            <p class="category-description">Specialized chemical compounds to enhance rubber properties</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-number">Product 3</div>
+                    <div class="product-name">Rubber Chemicals & Insoluble Sulphur</div>
+                    <div class="product-source">Sennics Co., Ltd. (Sinochem), China</div>
+                    <div class="product-description">Complete range of rubber chemicals including accelerators, retarders, and vulcanizing agents for optimal rubber curing.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Vulcanizing</span>
+                        <span class="product-feature-tag">Stable</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 4</div>
+                    <div class="product-name">Tackifying & Curing Resins</div>
+                    <div class="product-source">Sino Legend Chemical Co. Ltd., China</div>
+                    <div class="product-description">High-quality resins for improving adhesion and curing efficiency. Essential for rubber compound formulation.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Adhesive</span>
+                        <span class="product-feature-tag">Curing</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 8</div>
+                    <div class="product-name">Silane Coupling Agents</div>
+                    <div class="product-source">Nanjing Shuguang Silane Chemical Co., Ltd., China</div>
+                    <div class="product-description">Advanced coupling agents for improved rubber-filler bonding. Enhances mechanical properties of rubber compounds.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Bonding</span>
+                        <span class="product-feature-tag">Performance</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 14</div>
+                    <div class="product-name">Cobalt Adhesion Promoter</div>
+                    <div class="product-source">Sanliang, China</div>
+                    <div class="product-description">Specialty adhesion promoter for enhanced steel-rubber bonding. Critical for tire safety and durability.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Adhesion</span>
+                        <span class="product-feature-tag">Safety</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 15</div>
+                    <div class="product-name">Hydrocarbon Resin & Misc. Chemicals</div>
+                    <div class="product-source">Twinkle Star Chem Technology, China</div>
+                    <div class="product-description">Specialized hydrocarbon resins and miscellaneous chemicals for various rubber processing applications.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Specialized</span>
+                        <span class="product-feature-tag">Versatile</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 16</div>
+                    <div class="product-name">Curing Release Agents</div>
+                    <div class="product-source">Fin International, Thailand</div>
+                    <div class="product-description">Release agents for efficient vulcanization process. Ensures clean tire surface and reduces defects.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Curing</span>
+                        <span class="product-feature-tag">Quality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oils & Carbon Category -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-icon">🛢️</div>
+                <h3 class="category-title">Oils, Additives & Carbon</h3>
+            </div>
+            <p class="category-description">Processing oils and specialty additives for rubber compound optimization</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-number">Product 9</div>
+                    <div class="product-name">Rubber Process Oil & Base Oil</div>
+                    <div class="product-source">Shell Singapore/Hong Kong</div>
+                    <div class="product-description">Premium process oils for rubber compound softening and plasticization. Improves processing and final product properties.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Processing</span>
+                        <span class="product-feature-tag">Premium</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 10</div>
+                    <div class="product-name">Carbon Black</div>
+                    <div class="product-source">Longxing Chemical Stock Co., Ltd., China</div>
+                    <div class="product-description">High-quality carbon black for enhanced tire strength, abrasion resistance, and UV protection. Critical filler for tire compounds.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Strength</span>
+                        <span class="product-feature-tag">UV Protection</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-number">Product 13</div>
+                    <div class="product-name">Processing Aid & Homogenizing Agent</div>
+                    <div class="product-source">Flow Polymers, LLC - USA</div>
+                    <div class="product-description">Advanced processing aids for improved rubber mixing and homogenization. Reduces processing time and energy consumption.</div>
+                    <div class="product-features">
+                        <span class="product-feature-tag">Efficiency</span>
+                        <span class="product-feature-tag">Eco-friendly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Principals Section -->
+        <div class="principals-intro">
+            <h2>Our Global Principals</h2>
+            <p>Northwest Group partners with leading manufacturers worldwide to ensure the highest quality products and reliable supply chains. Our principals are carefully selected for their commitment to excellence, innovation, and customer satisfaction in the tire and rubber industry.</p>
+        </div>
     </main>
 
     <footer>
@@ -803,17 +801,13 @@
         </div>
     </footer>
 
-    <a href="#top" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</a>
-
     <script>
-        const backToTopBtn = document.querySelector('.back-to-top-btn');
         const scrollToTop = document.querySelector('.scroll-to-top');
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
-                backToTopBtn.style.display = 'flex';
                 scrollToTop.classList.add('show');
             } else {
-                backToTopBtn.style.display = 'none';
                 scrollToTop.classList.remove('show');
             }
         });
