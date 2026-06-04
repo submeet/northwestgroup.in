@@ -231,6 +231,37 @@
             box-shadow: 0 10px 30px rgba(0, 153, 204, 0.4);
         }
 
+        .scroll-to-top {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 153, 204, 0.15);
+            border: 2px solid rgba(0, 153, 204, 0.3);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #0099cc;
+            transition: all 0.3s ease;
+            z-index: 99;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll-to-top:hover {
+            background: rgba(0, 153, 204, 0.25);
+            border-color: rgba(0, 153, 204, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 153, 204, 0.2);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
         @media (max-width: 768px) {
             nav.main-nav {
                 gap: 15px;
@@ -412,6 +443,8 @@
         </div>
     </header>
 
+    <div class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</div>
+
     <div class="hero">
         <div class="hero-content">
             <h1>About Northwest Group</h1>
@@ -450,11 +483,15 @@
 
     <script>
         const backToTopBtn = document.querySelector('.back-to-top-btn');
+        const scrollToTop = document.querySelector('.scroll-to-top');
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTopBtn.style.display = 'flex';
+                scrollToTop.classList.add('show');
             } else {
                 backToTopBtn.style.display = 'none';
+                scrollToTop.classList.remove('show');
             }
         });
     </script>
