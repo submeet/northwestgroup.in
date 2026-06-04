@@ -702,31 +702,6 @@
                 </div>
             </div>
             </div>
-
-            <!-- Contact Form Section -->
-            <div class="form-section">
-            <h2>💬 Send us a Message</h2>
-            <p>Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="form-button">Send Message</button>
-            </form>
-            </div>
         </div>
     </main>
 
@@ -737,43 +712,5 @@
         </div>
     </footer>
 
-    <!-- EmailJS Library -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
-
-    <script type="text/javascript">
-        // Initialize EmailJS
-        emailjs.init('SITE_ID_WILL_BE_ADDED');
-
-        // Handle form submission
-        const form = document.getElementById('contactForm');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // Send email using EmailJS
-            emailjs.send('SERVICE_ID_WILL_BE_ADDED', 'TEMPLATE_ID_WILL_BE_ADDED', {
-                to_email: 'submeetahi@gmail.com',
-                from_name: name,
-                from_email: email,
-                subject: subject,
-                message: message
-            })
-            .then(function(response) {
-                // Success
-                alert('Message sent successfully! We will get back to you soon.');
-                form.reset();
-            }, function(error) {
-                // Error
-                alert('Failed to send message. Please try again or contact us directly.');
-                console.log('FAILED...', error);
-            });
-        });
-    </script>
 </body>
 </html>
