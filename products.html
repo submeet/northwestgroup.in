@@ -223,6 +223,14 @@
             margin-bottom: 40px;
         }
 
+        .category-section:nth-child(1) .product-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .category-section:nth-child(n+2) .product-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         .product-card {
             background: #fff;
             border-radius: 16px;
@@ -409,6 +417,14 @@
             .product-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .category-section:nth-child(1) .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-section:nth-child(n+2) .product-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-content {
